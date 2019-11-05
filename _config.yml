@@ -16,6 +16,8 @@ collections:
     output: true
   web-dynamic:
     output: true
+  cards:
+    output: true
 
 # Définit le(s) dossier(s) pour l'acces au fichier sass (scss).
 sass:

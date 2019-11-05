@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="container">
+<div class="row d-flex justify-content-center mt-5">
+{% if site.cards.size > 0 %}
+    {% for tuto in site.cards %}
+    <section class="col-12 col-sm-6 col-lg-3">
+      <div class="card shadow m-2" style="min-height:350px;">
+        <img src="{{ tuto.image | relative_url }}" class="card-img-top" alt="{{tuto.image}}">
+        <div class="card-body">
+          <h5 class="card-title">{{tuto.title}}</h5>
+          <p class="card-text">{{tuto.comment}}</p>
+          <div class="d-flex justify-content-center">
+            <a href="{{ tuto.link | relative_url }}" class="btn btn-outline-info">Accèder au cours</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+    {% endfor %}
+    {% endif %}
+
+  </div>
+</article>
