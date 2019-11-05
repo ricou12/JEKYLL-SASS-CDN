@@ -1,0 +1,70 @@
+// GRID
+$col-1: calc(100% / 12);
+
+// TAILLE ECRAN
+$SizeScreen:"default";
+
+// RADIUS
+$radius:0.7em;
+
+// MARGIN
+$margin:1em;
+
+// PADDING
+$padding:0.7em;
+
+$douxPapillon: 2s;
+$positionXpapillon: 5vw;
+$positionYpapillon: 5vh;
+
+// COULEUR (déclaration de variable sous forme de tableaux)
+// $couleur:(
+//     primary:rgba(0, 0, 255, 1),
+//     secondary:rgba(108, 117, 125, 1),
+//     success:rgba(40, 167, 69, 1),
+//     danger:rgba(220, 53, 69, 1),
+//     warning:rgba(255, 193, 7, 1),
+//     info:rgba(23, 162, 184, 1),
+//     light:rgba(248, 249, 250, 1),
+//     dark:rgba(52, 58, 64, 1),
+//     muted:rgba(52, 58, 64, 1),
+//     white:rgba(255, 255, 255, 1)
+// );
+
+// Creer une fonction pour retourner la valeur
+// @function color($name){
+//     @return map-get($couleur, $name);
+// }
+
+
+// Declaration de variable pour chaque couleur
+$color-primary:rgba(0, 0, 255, 1);
+$color-secondary:rgba(108, 117, 125, 1);
+$color-success:rgba(40, 167, 69, 1);
+$color-danger: rgba(220, 53, 69, 1);
+$color-warning: rgba(255, 193, 7, 1);
+$color-info:rgba(23, 162, 184, 1);
+$color-light: rgba(248, 249, 250, 1);
+$color-dark:rgba(52, 58, 64, 1);
+$color-muted:rgba(52, 58, 64, 1);
+$color-white:rgba(255, 255, 255, 1);
+
+
+// BG-LIGHT-COLOR
+$color-light-primary:rgba(0, 0, 255, 0.5);
+$color-light-secondary:rgba(108, 117, 125, 0.5);
+$color-light-success:rgba(40, 167, 69, 0.5);
+$color-light-danger: rgba(220, 53, 69, 0.5);
+$color-light-warning: rgba(255, 193, 7, 0.5);
+$color-light-info:rgba(23, 162, 184, 0.5);
+$color-light-light: rgba(248, 249, 250, 0.5);
+$color-light-dark:rgba(52, 58, 64, 0.5);
+$color-light-muted:rgba(52, 58, 64, 0.5);
+$color-light-white:rgba(255, 255, 255, 0.5);
+
+// SIZE
+$size-xs:1em;
+$size-sm:1.5em;
+$size-md:2em; // Valeur par default
+$size-lg:2.5em;
+$size-xl:3em;

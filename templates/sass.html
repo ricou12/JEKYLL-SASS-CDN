@@ -1,0 +1,178 @@
+---
+layout : default
+titre : SASS
+---
+
+<main class="container myFont4">
+
+  <div class="row ">
+
+    <section class="col-12 text-center">
+      <h1 class="bold">SASS</h1>
+      <p>Syntactically Awesome Style Sheets</p>
+    </section>
+
+    <section class="col-12">
+      <h2>Définition</h2>
+      <p>C'est un pré-processeur pour le langage CSS. <br>Il permet de générer dynamiquement du code CSS tout en offrant
+        une syntaxe simple et un code facilement réutilisable et maintenable. </p>
+
+      <h2>Documentation</h2>
+      <a href="{{"https://sass-lang.com/"}}" target="_blank">Site officiel</a>
+      <br>
+      <a href="{{"https://itnext.io/starting-with-sass-116f4ecb682d"}}" target="_blank">Starting with Sass</a>
+      <br><br>
+
+      <h2><span class="bold">Installation locale</span>, inclus les dépendances du projet (node_module)</h2>
+      <ul>
+        <li>Installer Ruby en le téléchargeant à partir du lien suivant <a href=" https://rubyinstaller.org/"
+            target="_blank">https://rubyinstaller.org/</a>
+        </li>
+        <li> Créer un <span class="bold">dossier pour le projet</span>, puis l'ouvrir dans l'éditeur.</li>
+        <li><span class="bold">Initialiser le projet</span>, créer un fichier "package.json".
+          <p>
+            <pre>npm init -y</pre> L'option "-y" permet de reporter la phase de configuration du fichier package.json.
+          </p>
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              <img class=" shadow-lg" src="{{"/images/contact/package.png" | relative-url}}" alt="package.json">
+            </div>
+          </div>
+          <ul>
+            <li>Il regroupe des informations sur:
+              <ul>
+                <li>Le nom du projet.</li>
+                <li>La version.</li>
+                <li>Description du projet.</li>
+                <li>L'auteur.</li>
+              </ul>
+            </li>
+            <li>Permet de lancer des scripts.
+              <p>Ex: automatiser la compilation, relancer le serveur...</p>
+            </li>
+            <li>Conserve les dépendances du projet .
+              <p>Par la suite si l'on souhaite effectuer un clonage du projet à partir de Github on utilisera la
+                commande
+                "npm install" pour installer automatiquement les dépendances vers le dossier node_module.</p>
+            </li>
+          </ul> 
+        </li>
+        <li><span class="bold">Installer node-sass</span> pour compiler les fichiers scss au format css.
+          <p>En effet les navigateurs sont incapables d'interprêter ce type fichier.
+            <pre>npm install node-sass --save-dev</pre>
+          </p>
+          <p>L'option: "--save-dev" ou plus simplement "-D" ajoute une dépendance au fichier "package.json" dite
+            dev-time, exécutée pendant la phase de développement. </p>
+          <p>L'option: "--save" ou plus simplement "-s" crée une dépendance au fichier "package.json" dite runtime (en
+            temps réelle) ex: bootstrap, jquery ou tout autre dépendance necessaire au bon fonctionnnemnt des pages web.
+          </p>
+        </li>
+        <li><span class="bold">Automatiser la compilation</span>.
+          <p>Ajouter à la section script du fichier package.json
+            <pre>"compile-sass": "node-sass sass/main.scss css/style.css --watch"</pre>
+          </p>
+        </li>
+        <li>Définir le dossier cible pour la génération du css, ne pas oublier d'ajouter le lien du css dans la balise
+          &lt; head &gt;.
+          <pre>&lt; link rel="stylesheet" type="text/css" href="css/style.css" /&gt;</pre>
+        </li>
+        <li><span class="bold"></span>Démarrer la compilation en mode auto si renseigné dans le "package.json" (générer
+          le fichier css à partir du scss).
+          <pre>npm run compile-sass</pre>
+          <p></p>
+        </li>
+      </ul>
+
+      <br>
+      <h2 class="bold">Installation globale</h2>
+      <ul>
+        <li>Installer Ruby</li>
+        <li>Créer un dossier pour le projet</li>
+        <li>Installer node-sass
+          <pre>npm install -g sass</pre>
+        </li>
+        <li>Utiliser le CDN pour les dépendances du projet.</li>
+        <ul>
+          <li>bootstrap</li>
+          <ul>
+            <li>bootstrap.min.css (Dans la balise &lt; head &gt;).</li>
+            <li>bootrap.min.js (dans la balise &lt; script &gt; avant &lt; body &gt;)</li>
+            <li>popper.js (idem)</li>
+            <li>jquery.js (idem)</li>
+          </ul>
+        </ul>
+      </ul>
+      <br>
+      <h2 class="bold">Les variables</h2>
+      <p>Vous attribuez une valeur à un nom commençant par $ , puis vous pouvez vous référer à ce nom plutôt qu'à la
+        valeur elle-même, Les variables permettent de réduire les répétitions, de faire des calculs complexes, de
+        configurer des bibliothèques et bien plus encore.</p>
+      <p>Méthode n°1
+        <pre>Declaration de variable pour chaque couleur 
+          $color-primary:rgba(0, 0, 255, 1);
+          $color-secondary:rgba(108, 117, 125, 1);
+          $color-success:rgba(40, 167, 69, 1);
+          $color-danger: rgba(220, 53, 69, 1);
+          $color-warning: rgba(255, 193, 7, 1);
+          $color-info:rgba(23, 162, 184, 1);
+          $color-light: rgba(248, 249, 250, 1);
+          $color-dark:rgba(52, 58, 64, 1);
+          $color-muted:rgba(52, 58, 64, 1);
+          $color-white:rgba(255, 255, 255, 1);
+          </pre>
+      </p>
+      <p>Méthode n°2</p>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="row d-flex justify-content-center">
+            <img class=" border border-light shadow-lg" src="{{"/images/contact/variables.png"|relative-url}}" alt="">
+            <p>Ici on déclare une collection de couleur sous forme de tableau.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <img class=" border border-light shadow-lg" src="{{"/images/contact/fonctionCouleur.png"|relative-url}}"
+              alt="fonction-couleur">
+            <p>On crée une fonction qui renvoie la couleur.</p>
+            <img src="{{"/images/contact/classcolor.png"|relative-url}}" alt="class-color">
+            <p>Utilise une classe pour attribuer cette couleur à la propriété color.</p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h2 class="bold">Les fonctionalités (règles)</h2>
+      <ul>
+        <li>@use charge les mixins, les fonctions et les variables d'autres feuilles de style Sass et combine les
+          feuilles
+          CSS de plusieurs feuilles de style.</li>
+        <li>@forward charge une feuille de style Sass et rend ses combinaisons, fonctions et variables disponibles
+          lorsque
+          votre feuille de style est chargée avec la règle @use .</li>
+        <li>@import étend la règle CSS at pour charger des styles, des mixins, des fonctions et des variables à partir
+          d'autres feuilles de style.</li>
+        <div class="row">
+          <div class="col-12 col-md-6"><img src="{{"/images/contact/import.png"|relative-url}}" alt="sass-@import">
+          </div>
+          <div class="col-12 col-md-6 d-flex align-items-center">
+            <p>Ici l'ensemble des fichiers scss sont importés vers le fichier principal. Lors de la compilation
+              l'intégralité des fichiers scss importés seront ajouté au fichier css final. </p>
+          </div>
+        </div>
+        <li>@mixin et @include facilitent la réutilisation de morceaux de styles.</li>
+        <li>@function définit les fonctions personnalisées pouvant être utilisées dans les
+          expressions
+          SassScript .</li>
+        <li>@extend permet aux sélecteurs d'hériter des styles les uns des autres.</li>
+        <li>@at-root place les styles en son sein à la racine du document CSS .</li>
+        <li>@error provoque l'échec de la compilation avec un message d'erreur.</li>
+        <li>@warn un avertissement sans arrêter complètement la compilation.</li>
+        <li>@debug imprime un message à des fins de débogage.</li>
+        <li>Des règles de contrôle de flux telles que @if , @each , @for et @while contrôlent le nombre de fois ou plus
+          de styles émis.</li>
+      </ul>
+    </section>
+
+
+  </div>
+
+</main>

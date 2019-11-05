@@ -1,0 +1,72 @@
+---
+layout: default
+---
+<article class="container myFont4">
+  <section class="row">
+    <div class="col-12  text-center">
+      <h1 class="bold">CLI</h1>
+      <h2 class="bold">Command line interface</h2>
+    </div>
+
+    <div class="col-12">
+      <br>
+      <h3>Définition</h3>
+      <p>CLI est un programme en ligne de commande ou une interface homme-machine dans laquelle la communication entre
+        l'utilisateur et l'ordinateur s'effectue en mode texte.</p>
+    <h3>Notions</h3>
+    <p>Chemin relatif : par défaut à partir du répertoire racine cependant on peut remonter plus haut dans l'arborescence <br>ex:<pre> ./../root</pre>  <br>chemin absolu : à partir de la racine du disque</p>
+      <h3 class="bold">Les commandes</h3>
+      <ul>
+        <li><span class="bold">pwd </span> : renvoie le répertoire courant.</li>
+        <li><span class="bold">ls</span> : liste les fichiers et dossiers du répertoire courant
+          <ul>
+            <li><span class="bold">ls -l</span> : affiche sous forme de liste</li>
+            <p>
+              <pre>
+$ ls -la
+total 4
+drwxr-xr-x 1 Eric Lanza 197121 0 oct. 29 20:25 ./          : répertoire courant
+drwxr-xr-x 1 Eric Lanza 197121 0 oct. 29 20:25 ../         : répertoire parent
+-rw-r--r-- 1 Eric Lanza 197121 6372 oct. 29 22:11 404.html : "-" pour fichier
+drwxr-xr-x 1 Eric Lanza 197121 0 oct. 29 21:00 assets/     : "d" pour dossier
+</pre>
+            </p>
+            <li><span class="bold">ls -a</span> : affiche les fichiers et dossiers cachés</li>
+            <li><span class="bold">ls -la</span> : combine les 2 options précédentes</li>
+          </ul>
+        </li>
+        <li><span class="bold">cd</span> : se déplacer dans l'arborescence des dossiers
+          <ul>
+            <li><span class="bold">cd &lt; nom_répertoire &gt;</span> : ouvre le dossier concerné</li>
+            <li><span class="bold">cd ..</span> : remonte dans l'arborescence</li>
+            <li><span class="bold">cd ~</span> : retourne au répertoire racine (root)</li>
+          </ul>
+        </li>
+        <li><span class="bold">touch &lt; nom_fichier &gt;</span> : crée un fichier</li>
+        <li><span class="bold">mkdir &lt; nom_repertoire &gt;</span> : crée un dossier</li>
+        <li><span class="bold">cat &lt; nom_fichier &gt;</span> : affiche le contenu d'un fichier</li>
+        <li><span class="bold">less, more </span> : affiche aussi le contenu d'un fichier</li>
+        <li><span class="bold">mv &lt; source &gt; &lt; destination &gt; </span>: déplace un dossier, fichier</li>
+        <li><span class="bold">cp &lt; source &gt; &lt; destination &gt;</span> : copie un fichier ou dossier</li>
+        <li><span class="bold">rm &lt; nom_fichier &gt;</span></li>
+        <li><span class="bold">rm -rf &lt; nom_fichier &gt;</span></li>
+        <li><span class="bold">grep &lt; recherche &gt; &lt;nom_fichier &gt; </span> : trouve un mot dans un fichier</li>
+        <li><span class="bold">man</span> : manuel navigation fleche haut et bas q pour quitter</li>
+      </ul>
+      <h3>Raccourcis clavier</h3>
+      <ul>
+        <li><span class="bold">Flèche haut</span> : navigation dans l'historique des commandes</li>
+        <li><span class="bold">tab</span> : autocomplétion</li>
+        <li><span class="bold">ctrl + r</span> : recherche dans l'historique</li>
+        <p>Tapez les premier caractères <br>Entrée pour valider</p>
+
+      </ul>
+    </div>
+  </section>
+  <article class="container">
+    </div>
+
+
+
+    <span class="bold"></span>
+    &lt;  &gt;

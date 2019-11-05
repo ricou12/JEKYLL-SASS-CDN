@@ -1,0 +1,44 @@
+.color-primary {
+   color: $color-primary;
+   //  color: $couleur(primary);
+   // color: map-get($couleur, warning); ok
+   // color: $couleur-#{warning};
+   // color: $couleur-primary;
+   // color: color(primary);
+}
+
+.color-secondary {
+   color: $color-secondary;
+}
+
+.color-success {
+   color: $color-success;
+}
+
+.color-danger {
+   color: $color-danger;
+}
+
+.color-warning {
+   color: $color-warning;
+}
+
+.color-info {
+   color: $color-info;
+}
+
+.color-light {
+   color: $color-light;
+}
+
+.color-dark {
+   color: $color-dark;
+}
+
+.color-muted {
+   color: $color-muted;
+}
+
+.color-white {
+   color: $color-white;
+}

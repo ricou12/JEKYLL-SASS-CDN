@@ -1,0 +1,46 @@
+---
+layout : default
+titre : Portfolio
+---
+<main class="container mt-5">
+
+  <aticle class="row">
+    <!-- Titre de la page -->
+    <section class="col-12  alert-primary  text-center border border-white">
+     <h1 class="bold">Le Front-end</h1>
+    </section>
+    
+    <!-- WEB STATIQUE -->
+    <section class="web-static col-12 col-md-6 border shadow-lg p-5 ">
+      <aside class="web-static__title alert alert-primary text-center mb-5 shadow-lg" role="alert">
+        <h3>Web statique.</h3>
+        <p class="alert alert-primary">Liens vers Github...</p>
+      </aside>
+      <aside>
+        {%- if site.web-static.size > 0 -%}
+        {% assign wStatic = site.web-static  | sort: 'identifiant' %}
+        {% for w in wStatic %}
+        {{w.content}}
+        {% endfor %}
+        {%- endif -%}
+      </aside>
+    </section>
+    <!-- WEB DYNAMIQUE -->
+    <!-- PictureBox  html css et javascript -->
+    <section class="col-12 col-md-6 border shadow-lg p-5">
+      <aside class="alert alert-primary text-center mb-5 shadow-lg" role="alert">
+        <h3>Web dynamique.</h3>
+        <p class="alert alert-primary">Premiers pas en Javascript.</p>
+      </aside>
+      <aside>
+        {%- if site.web-dynamic.size > 0 -%}
+        {%- for item in site.web-dynamic -%}
+        {{item.content}}
+        {%- endfor -%}
+        {%- endif -%}
+      </aside>
+    </section>
+
+  </article>
+
+</main>

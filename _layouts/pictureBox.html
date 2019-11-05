@@ -1,0 +1,49 @@
+---
+layout : default
+---
+
+
+<main class="container mt-5">
+  <article class="row">
+    <!-- <div class="fly">
+      <p></p>
+      <img src="{{ "images/contact/pap.png" }}" alt="">
+    </div> -->
+
+    <!--  BOX HEADER -->
+    <section class="col-12 myfont">
+      <h2 class="myFont2 text-center float-lg-left">MyPictureBox.fr</h2>
+      <h1 class="myFont2 text-right float-lg-right">La PictureBox d'Eric</h1>
+    </section>
+
+
+    <!-- BOX CATALOGUE -->
+    <section class="col-12 mt-4 text-center d-flex justify-content-end flex-row">
+      {% if site.villes.size > 0 %}
+      {% for ville in site.villes %}
+      <a href="{{ ville.url | relative_url }}" class="btn btn-outline-primary mr-3 btn-md">{{ville.name}}</a>
+      {% endfor %}
+      {% endif %}
+    </section>
+
+    <!-- BOX VIGNETTE -->
+    <section id="containerImg" class="col-12 col-md-4 mt-4 d-flex flex-row flex-md-column overflow-auto">
+      {% for iteration in (1..page.number-files) %}
+      {%  assign hisDirectory = page.dossier | append: iteration | append: '.jpg' %}
+      {% assign addComment = page.name | append: "-" | append: iteration  %}
+      <img class="vignette flex-md-shrink-0 shadow p-1 mb-1 img-thumbnail" src="{{hisDirectory | relative_url}}"
+        alt="{{addComment}}" id="vignette" onclick="showImageMode2(this);">
+
+      {%- endfor -%}
+    </section>
+
+    <!-- BOX TITRE, PHOTO, COMMENTAIRES -->
+    <section class="mt-4 col-12 col-md-8">
+      <h1>{{page.titre}}</h1>
+      <div class="d-block w-100 d-flex flex-row flex-wrap justify-content-center"><img id="myImg"
+          class="d-block mw-100 shadow p-2 mb-3 bg-white rounded" src="" alt=""></div>
+      <p>{{page.content}}</p>
+    </section>
+
+  </article>
+  </main>

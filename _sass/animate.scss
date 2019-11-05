@@ -1,0 +1,127 @@
+.fly {
+  border: 1px solid;
+  z-index: 500;
+  top: $positionYpapillon;
+  left: $positionXpapillon;
+  width: 10%;
+  white-space: nowrap;
+  position: absolute;
+  cursor: pointer;
+
+  &:hover {
+    $douxPapillon: 0.5s;
+  }
+
+  &:active {
+    animation: dpl 5s;
+    $douxPapillon: 0.5s;
+  }
+}
+
+.fly--image {
+  width: 100%;
+  animation: papillon $douxPapillon alternate infinite;
+}
+
+@keyframes dpl {
+  0% {
+    transform: rotate(0deg);
+    height: 10%;
+    width: 10%;
+    top: 0vw;
+    left: 0vw;
+  }
+
+  10% {
+    transform: rotate(25deg);
+    height: 15%;
+    width: 15%;
+    top: 5vw;
+    left: 0vw;
+  }
+
+  15% {
+    transform: rotate(45deg);
+    height: 10%;
+    width: 10%;
+    top: 10vw;
+    left: 5vw;
+  }
+
+  20% {
+    transform: rotate(60deg);
+    height: 15%;
+    width: 15%;
+    top: 15vw;
+    left: 10vw;
+  }
+
+  25% {
+    transform: rotate(90deg);
+    height: 17%;
+    width: 17%;
+    top: 20vw;
+    left: 17vw;
+  }
+
+  30% {
+    transform: rotate(95deg);
+    height: 15%;
+    width: 15%;
+    top: 25vw;
+    left: 25vw;
+  }
+
+  50% {
+    transform: rotate(100deg);
+    height: 10%;
+    width: 10%;
+    top: 30vw;
+    left: 30vw;
+  }
+
+  70% {
+    transform: rotate(115deg);
+    height: 7%;
+    width: 7%;
+    top: 35vw;
+    left: 45vw;
+  }
+
+  100% {
+    transform: rotate(115deg);
+    height: 0%;
+    width: 0%;
+    top: 40vw;
+    left: 60vw;
+  }
+
+}
+
+@keyframes papillon {
+  0% {
+
+    transform: scale(1.0) rotatey(45deg);
+  }
+
+  20% {
+    transform: scale(1.05) rotatey(90deg);
+  }
+
+  40% {
+    transform: scale(1.15) rotatey(120deg);
+  }
+
+  60% {
+    transform: scale(1.2) rotatey(90deg);
+  }
+
+  80% {
+    transform: scale(1.15) rotatey(180deg);
+  }
+
+  100% {
+    transform: scale(1.1) rotatey(90deg);
+  }
+
+}

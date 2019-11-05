@@ -1,0 +1,121 @@
+/* PADDING */
+.p {
+    padding: $size-md; // Valeur par defaut
+
+    &-xs {
+        padding: $size-md;
+    }
+
+    &-sm {
+        padding: $size-sm;
+    }
+
+    &-md {
+        padding: $size-md;
+    }
+
+    &-lg {
+        padding: $size-lg;
+    }
+
+    &-xl {
+        padding: $size-xl;
+    }
+
+}
+
+.pt {
+    padding-top: $size-md; // Valeur par defaut
+
+    &-xs {
+        padding-top: $size-xs;
+    }
+
+    &-sm {
+        padding-top: $size-sm;
+    }
+
+    &-md {
+        padding-top: $size-md;
+    }
+
+    &-lg {
+        padding-top: $size-lg;
+    }
+
+    &-xl {
+        padding-top: $size-xl;
+    }
+}
+
+.pr {
+    padding-right: $size-md; // Valeur par defaut
+
+    &-xs {
+        padding-right: $size-xs;
+    }
+
+    &-sm {
+        padding-right: $size-sm;
+    }
+
+    &-md {
+        padding-right: $size-md;
+    }
+
+    &-lg {
+        padding-right: $size-lg;
+    }
+
+    &-xl {
+        padding-right: $size-xl;
+    }
+}
+
+.pb {
+    padding-bottom: $size-md; // Valeur par defaut
+
+    &-xs {
+        padding-bottom: $size-xs;
+    }
+
+    &-sm {
+        padding-bottom: $size-sm;
+    }
+
+    &-md {
+        padding-bottom: $size-md;
+    }
+
+    &-lg {
+        padding-bottom: $size-lg;
+    }
+
+    &-xl {
+        padding-bottom: $size-xl;
+    }
+}
+
+.pl {
+    padding-left: $size-md; // Valeur par defaut
+
+    &-xs {
+        padding-left: $size-xs;
+    }
+
+    &-sm {
+        padding-left: $size-sm;
+    }
+
+    &-md {
+        padding-left: $size-md;
+    }
+
+    &-lg {
+        padding-left: $size-lg;
+    }
+
+    &-xl {
+        padding-left: $size-xl;
+    }
+}

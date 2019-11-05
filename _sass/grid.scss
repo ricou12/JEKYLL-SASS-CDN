@@ -1,0 +1,85 @@
+.container {
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@function SizeScreen($value) {}
+
+// extra-small devices
+@media (max-width: 576px) {
+    $SizeScreen: "sm";
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    $SizeScreen: "sm";
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    $SizeScreen: "md";
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    $SizeScreen: "lg";
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    $SizeScreen: "xl";
+}
+
+
+.col-1 {
+    width: calc($col-1);
+}
+
+.col-2 {
+    width: calc($col-1 * 2);
+}
+
+.col-3 {
+    width: calc($col-1 * 3);
+}
+
+.col-4 {
+    width: calc($-col-1 * 4);
+}
+
+.col-5 {
+    width: calc($col-1 * 5);
+}
+
+.col-6 {
+    width: calc($col-1 * 6);
+}
+
+.col-7 {
+    width: calc($col-1 * 7);
+}
+
+.col-8 {
+    width: calc($col-1 * 8);
+}
+
+.col-9 {
+    width: calc($-col-1 * 9);
+}
+
+.col-10 {
+    width: calc($col-1 * 10);
+}
+
+.col-11 {
+    width: calc($col-1 * 11);
+}
+
+.col-12 {
+    width: calc($col-1 * 12);
+}

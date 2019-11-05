@@ -1,0 +1,95 @@
+/* BEM */
+
+/* Block */
+.btn {
+    text-decoration: none;
+    border: 1px solid;
+    font-size: $size-sm;
+    border-radius: $radius;
+    padding: $padding;
+    &:hover{
+        box-shadow: 3px 3px 10px 1px rgba(8, 8, 8, 0.4);
+    }
+    &--primary {
+        border-color: $color-primary;
+        color: $color-primary;
+        &:hover {
+            background-color: $color-primary ;
+            color:$color-white;
+        }
+    }
+    &--secondary {
+        border-color: $color-secondary;
+        color: $color-secondary;
+        &:hover {
+            background-color:$color-light-secondary;
+            color:$color-white;
+        }
+    }
+    &--success {
+        border-color: $color-success;
+        color: $color-success;
+        &:hover {
+            background-color:$color-light-success;
+            color:$color-white;
+        }
+    }
+
+    &--danger {
+        border-color: $color-danger;
+        color: $color-danger;
+        &:hover {
+            background-color:$color-light-danger;
+            color:$color-white;
+        }
+    }
+
+    &--warning {
+        border-color: $color-warning;
+        color: $color-warning;
+        &:hover {
+            background-color:$color-light-warning;
+            color:$color-white;
+        }
+    }
+    &--info {
+        border-color: $color-info;
+        color: $color-info;
+        &:hover {
+            background-color:$color-light-info;
+            color:$color-white;
+        }
+    }
+    &--light {
+        border-color: $color-light;
+        color: $color-light;
+        &:hover {
+            background-color:$color-light-light;
+            color:$color-white;
+        }
+    }
+    &--dark {
+        border-color: $color-dark;
+        color: $color-dark;
+        &:hover {
+            background-color:$color-light-dark;
+            color:$color-white;
+        }
+    }
+    &--muted {
+        border-color: $color-muted;
+        color: $color-muted;
+        &:hover {
+            background-color:$color-light-muted;
+            color:$color-white;
+        }
+    }
+    &--white {
+        border-color: $color-white;
+        color: $color-white;
+        &:hover {
+            background-color:$color-light-white;
+            color:$color-white;
+        }
+    }
+}
