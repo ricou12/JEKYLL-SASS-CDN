@@ -1,0 +1,56 @@
+.myFont {
+  &1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.3em;
+  }
+
+  &2 {
+    font-family: 'Poiret One', cursive;
+    font-size: 2.5em;
+  }
+
+  &3 {
+    font-family: 'Nanum Myeongjo',
+      serifGeorgia,
+      Cambria,
+      "Times New Roman",
+      Times,
+      serif;
+    font-size: 1.3em;
+  }
+
+  &4 {
+    font-family: 'Cormorant',
+      serif;
+    font-size: 1.5em;
+  }
+}
+
+#containerImg {
+  max-height: 80vh;
+}
+
+.vignette {
+  min-height: 150px;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    filter: hue-rotate(120deg);
+    -webkit-filter: hue-rotate(120deg);
+    transform: scale(1.03);
+  }
+}
+
+
+.imgbackground {
+  height: 800px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/images/moorea/10.JPG");
+}
+
+.bold {
+  font-weight: bold;
+}
