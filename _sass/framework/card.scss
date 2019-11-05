@@ -1,0 +1,24 @@
+/* BEM */
+
+.card {
+  padding: 3em 1.5em;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__title {
+  margin: 0.5em;
+  font-size: $size-sm;
+}
+
+.card__text {
+  margin-bottom: 1.8em;
+  font-size: 1.2em;
+}
+
+.card__bouton {
+  text-align: center;
+  width: 80%;
+}

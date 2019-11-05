@@ -47,6 +47,10 @@
   background-image: url("/images/moorea/10.JPG");
 }
 
-.bold {
+.bold,h1,h2,h3 {
   font-weight: bold;
 }
+
+// ul{
+//   list-style: url("/images/contact/elem-liste3.png");   
+// }
