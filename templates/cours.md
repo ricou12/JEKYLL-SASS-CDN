@@ -1,4 +1,4 @@
 ---
 layout: cours
-titre: Cours développement web
+title: Cours développement web
 ---

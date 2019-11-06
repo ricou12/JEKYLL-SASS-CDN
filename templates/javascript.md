@@ -1,0 +1,4 @@
+---
+layout: javascript
+title: JavaScript
+---
