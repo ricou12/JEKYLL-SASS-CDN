@@ -1,8 +1,7 @@
 title: Un site version Jekyll.
 author: Eric Lanza
 email: dwwm2019@gmail.com
-description: > # this means to ignore newlines until "show_excerpts:"
-  En cours de formation de développeur web et web mobile (AFPA de la Valette du Var).
+description: En cours de formation de développeur web et web mobile (AFPA de la Valette du Var).
 
 # Définition des collections  de dossiers utilisateur.
 collections:
