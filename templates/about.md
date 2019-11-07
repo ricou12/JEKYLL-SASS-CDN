@@ -1,6 +1,6 @@
 ---
 layout: about
-titre: A propos
+title: A propos
 ---
 # Ceci est la page "A propos"
 

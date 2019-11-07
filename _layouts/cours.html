@@ -1,0 +1,89 @@
+---
+layout: default
+---
+<article class="container myFont3">
+  <div class="row d-flex justify-content-center mt-5">
+    <div class="col-12 col-lg-6 shadow">
+      <div class="row">
+        <div class="col-12 JekyllColor text-white text-center">
+          <h1>Cours Front end</h1>
+        </div>
+      </div>
+     
+      <div class="row">
+        {% if site.tutoFront.size > 0 %}
+        <!-- Trie les fichiers MD dans la première colonne via le critère de recherche "frontEnd" -->
+        {% assign group = site.tutoFront |  where:"type","frontEnd"  %}
+        <!-- Ordonne les fichiers MD via la variable number -->
+        {% assign orderItem = group | sort: 'number'  %}
+        <!-- Parcours les fichiers MD triés dans une boucle  -->
+        {% for tuto in orderItem %}
+        <section class="col-12 col-sm-6">
+          <div class="card shadow m-2" style="min-height:350px;">
+            <!-- Récupère la propriété pathImg -->
+            <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
+            <div class="card-body">
+               <!-- Récupère le titre -->
+              <h3 class="card-title">{{tuto.title}}</h3>
+               <!-- Récupère les commentaires -->
+              <p class="card-text">{{tuto.comment}}</p>
+              <div class="d-flex justify-content-center">
+                <!-- Affiche le lien -->
+                <!-- Affiche le lien -->
+                {% if tuto.link %}
+                <a href="{{ tuto.link | relative_url }}" class="btn btn-outline-info">
+                  Accèder au cours
+                  {% else  %}
+                  <a href="#" class="btn btn-outline-info  disabled">
+                    cours à venir
+                    {% endif  %}
+                  </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        {% endfor %}
+        {% endif %}
+      </div>
+  </div>
+  <div class="col-12 col-lg-6 shadow">
+    <div class="row">
+      <div class="col-12 JekyllColor  text-white text-center">
+        <h1>Cours Back End</h1>
+      </div>
+      {% if site.tutoFront.size > 0 %}
+      <!-- Trie les fichiers MD dans la deuxième colonne via le critère de recherche "backEnd" -->
+      {% assign group = site.tutoFront |  where:"type","backEnd"  %}
+      <!-- Ordonne les fichiers MD via la variable number -->
+      {% assign orderItem = group | sort: 'number'  %}
+      <!-- Parcours les fichiers MD triés dans une boucle  -->
+      {% for tuto in orderItem %}
+      <section class="col-12 col-sm-6">
+        <div class="card shadow m-2" style="min-height:350px;">
+          <!-- Récupère la propriété pathImg -->
+          <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
+          <div class="card-body">
+            <!-- Récupère le titre -->
+            <h3 class="card-title">{{tuto.title}}</h3>
+            <!-- Récupère les commentaires -->
+            <p class="card-text">{{tuto.comment}}</p>
+            <div class="d-flex justify-content-center">
+              <!-- Affiche le lien -->
+              {% if tuto.link %}
+              <a href="{{ tuto.link | relative_url }}" class="btn btn-outline-info">
+                 Accèder au cours
+              {% else  %}
+              <a href="#" class="btn btn-outline-info  disabled">
+                cours à venir
+                {% endif  %}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  </div>
+</article>

@@ -1,4 +1,4 @@
 ---
 layout: portfolio
-titre: cours
+title: Portfolio
 ---

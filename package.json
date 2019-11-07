@@ -1,10 +1,11 @@
 {
-  "name": "JEKYLL-new",
+  "name": "JEKYLL-SASS-CDN",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "compile-sass": "node-sass assets/css/main.scss _site/assets/css/style.css --watch",
+    "compile-sass2": "node-sass assets/css/framework.scss _site/assets/css/framework.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
