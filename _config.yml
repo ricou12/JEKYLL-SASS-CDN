@@ -2,6 +2,7 @@ title: Un site version Jekyll.
 author: Eric Lanza
 email: dwwm2019@gmail.com
 description: En cours de formation de développeur web et web mobile (AFPA de la Valette du Var).
+baseurl: "/JEKYLL-SASS-CDN"
 
 # Définition des collections  de dossiers utilisateur.
 collections:
