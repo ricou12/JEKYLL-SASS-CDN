@@ -3,9 +3,10 @@ layout: default
 ---
 <article class="container myFont3">
   <div class="row d-flex justify-content-center mt-5">
+     
     <div class="col-12 col-lg-6 shadow">
       <div class="row">
-        <div class="col-12 JekyllColor text-white text-center">
+        <div class="col-12 JekyllColor p-3 text-white text-center rounded-top border border-right-white">
           <h1>Cours Front end</h1>
         </div>
       </div>
@@ -47,8 +48,9 @@ layout: default
       </div>
   </div>
   <div class="col-12 col-lg-6 shadow">
+     
     <div class="row">
-      <div class="col-12 JekyllColor  text-white text-center">
+      <div class="col-12 JekyllColor p-3 text-white text-center rounded-top border border-left-white">
         <h1>Cours Back End</h1>
       </div>
       {% if site.tutoFront.size > 0 %}
@@ -87,3 +89,11 @@ layout: default
   </div>
   </div>
 </article>
+
+
+<script>
+    function afficheInput() {
+        let search = document.getElementById('myInput').value;
+        window.location.href="http://127.0.0.1:4000/JEKYLL-SASS-CDN/templates/cours.html?test=mavalue"
+    }
+    </script>
