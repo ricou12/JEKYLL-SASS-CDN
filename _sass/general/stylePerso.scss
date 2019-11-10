@@ -68,6 +68,18 @@ h6 {
 
 }
 
-// ul{
-//   list-style: url("/images/contact/elem-liste3.png");   
-// }
+.search {
+  font-size: 0.8em;
+  &__button {
+    background-color: black;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    color: white;
+    border-radius: 5px;
+  }
+
+  &__text {
+    color:darkolivegreen;
+    border-radius: 5px;
+  }
+}

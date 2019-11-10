@@ -2,13 +2,14 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container myFont4">
   <div class="row">
     <div class="col-12 mt-1 bg-dark text-light border border-success p-2">
+      <div class="search">
         <h6>Rechercher un cours par mot clé.</h6>
-        <input type="text" id="input-search">
-        <button onclick="mySearch();">Search</button>
-     
+        <input class="search__text" type="text" id="input-search">
+        <button class="search__button" onclick="mySearch();">Search</button>
+      </div>
     </div>
     <div class="col-12"  id="return-result">
         <!-- generated in JavaScript -->
