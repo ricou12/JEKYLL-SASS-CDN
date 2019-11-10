@@ -123,36 +123,40 @@ layout: default
   // Filtre le tableau de données et ne retourne que les éléments d'intérêt
   function search(word){
     return tutos.filter(tuto => {
-      return strContains(tuto.title, word);
+      return strContains(tuto.title, word,tuto.url);
     })
   }
   // const searchResults = search("J");
   // console.log(searchResults);
 
   // True si string contients word
-  function strContains(string, word){
-    return string.indexOf(word) > -1;
+  function strContains(string, word,url){
+    // Limite la cass
+    string = string.toLowerCase();
+    word = word.toLowerCase();
+    console.log("Chaines converties en minuscules : "+ string +"   "+word);
+    // Ne retourne que les cours dont url pointe vers un url.
+    if (url){
+      return string.indexOf(word) > -1;
+    } 
   }
 
   function userSearch(word){
     const searchResults = search(word) || [];
     let html = "";
-    let root ="JEKYLL-SASS-CDN";
     searchResults.forEach(function(result){
             
       html += `
         <a class="btn btn-success mb-1" href="{{ site.baseurl }}${result.url}">${result.title}</a>
       `;
     });
-    html = `<div class="row"><div class="col-12 mt-1 bg-dark border border-dark p-2 shadow-lg text-white">
-    <h6>Resultat de ma recherhe</h6>${html}</div></div>`
+    html = `<div class="row"><div class="col-12 mt-1 bg-dark border border-dark p-2 shadow-lg text-white"><h6>Resultat de ma recherhe</h6>${html}</div></div>`
     $resultContainer.innerHTML = html;
   }
   //  userSearch('J');
 
   function mySearch(){
     const maRecherche = $inputSearch.value;
-    console.log(maRecherche);
     userSearch(maRecherche);
   }
 </script>
