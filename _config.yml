@@ -16,9 +16,7 @@ collections:
     output: true
   web-dynamic:
     output: true
-  tutoFront:
-    output: true
-  tutoBack:
+  tuto:
     output: true
 
 # Définit le(s) dossier(s) pour l'acces au fichier sass (scss).

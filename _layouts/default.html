@@ -4,6 +4,9 @@
 
 <body>
   {%- include navbar.html -%}
+
+  
+
   {{ content }}
   {% include footer.html %}
 
@@ -13,63 +16,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-<!-- Export site data for search -->
-<div id="search-result"></div>
-<script type="application/javascript">
-  const $resultContainer = document.getElementById('search-result');
 
-  const tutos = [
-
-  {%- for tuto in site.tutoFront -%}
-
-  {
-    title: "{{ tuto.title }}",
-    url: "{{ tuto.link }}"
-  },
-
-  {%- endfor -%}
-
-  ];
-
-  console.log(tutos);
-
-  // Filtre le tableau de données et ne retourne que les éléments d'intérêt
-  function search(word){
-    return tutos.filter(tuto => {
-      return strContains(tuto.title, word);
-    })
-  }
-
-  const searchResults = search("J");
-  console.log(searchResults)
-
-  // True si string contients word
-  function strContains(string, word){
-    return string.indexOf(word) > -1;
-  }
-
-
-  function userSearch(word){
-    const searchResults = search(word) || [];
-
-    let html = "";
-
-    searchResults.forEach(function(result){
-      /*const $link = document.createElement('a'); 
-      $resultContainer.appendChild($link);*/
-      //.....
-
-      html += `
-        <a href="${result.link}">${result.title}</a>
-      `;
-    });
-
-    $resultContainer.innerHTML = html;
-  }
-
-  userSearch('J');
-
-</script>
 
 </body>
 
