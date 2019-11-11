@@ -7,7 +7,7 @@ titre : Portfolio
   <aticle class="row">
       
     <!-- Titre de la page -->
-    <section class="col-12 p-3 JekyllColor rounded-top p-3 text-white text-center">
+    <section class="col-12 text-center mt-1 mb-5 bg-secondary text-white p-2">
      <h1>Le Front-end</h1>
     </section>
     
@@ -21,7 +21,7 @@ titre : Portfolio
         {%- if site.web-static.size > 0 -%}
         {% assign wStatic = site.web-static  | sort: 'identifiant' %}
         {% for w in wStatic %}
-        {{w.content}}
+        {{ w.content }}
         {% endfor %}
         {%- endif -%}
       </aside>
@@ -35,8 +35,9 @@ titre : Portfolio
       </aside>
       <aside>
         {%- if site.web-dynamic.size > 0 -%}
-        {%- for item in site.web-dynamic -%}
-        {{item.content}}
+        {% assign wdynamic = site.web-dynamic  | sort: 'identifiant' %}
+        {%- for wdyn in wdynamic -%}
+        {{ wdyn.content }}
         {%- endfor -%}
         {%- endif -%}
       </aside>

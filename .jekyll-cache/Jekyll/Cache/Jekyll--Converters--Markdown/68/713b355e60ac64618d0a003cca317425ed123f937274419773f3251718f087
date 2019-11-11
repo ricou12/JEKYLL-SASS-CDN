@@ -1,0 +1,83 @@
+I"�<p>Node.js utilise le langage JavaScript, il offre un environnement côté serveur en dehors du navigateur !</p>
+
+<hr />
+<hr />
+
+<p><strong>Installation</strong>:télécharger soit le .msi, soit le .exe</p>
+
+<p><strong>Creer un serveur web simple</strong> : <em>server.js</em></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var http = require('http');
+var server = http.createServer(function(req, res) {
+res.writeHead(200, {"Content-Type": "text/html"});
+res.end('<span class="nt">&lt;p&gt;</span>Voici un paragraphe <span class="nt">&lt;strong&gt;</span>HTML<span class="nt">&lt;/strong&gt;</span> !<span class="nt">&lt;/p&gt;</span>');
+});
+
+server.listen(8080);
+</code></pre></div></div>
+
+<p><strong>Lancer le serveur</strong>
+A partir d’un terminal : <em>node server.js</em></p>
+
+<p><strong>Ouvrir le navigateur a l’adresse:</strong></p>
+
+<p>http://localhost:8080 ou http://localhost:8080/mapage ou http://localhost:8080/dossier/autrepage</p>
+
+<hr />
+
+<p><strong>les types MIME</strong></p>
+
+<p>Le serveur doit indiquer le type de données</p>
+<ul>
+  <li>Du texte brut : text/plain</li>
+  <li>Du HTML : text/html</li>
+  <li>Du CSS : text/css</li>
+  <li>Une image JPEG : image/jpeg</li>
+  <li>Une vidéo MPEG4 : video/mp4</li>
+  <li>Un fichier ZIP : application/zip</li>
+  <li>etc</li>
+</ul>
+
+<p>Ex : res.writeHead(200, {“Content-Type”: “text/html”});</p>
+
+<p><strong>HTML dans la réponse</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>res.end('&lt;p&gt;Voici un paragraphe &lt;strong&gt;HTML&lt;/strong&gt; !&lt;/p&gt;');
+var http = require('http');
+</code></pre></div></div>
+
+<h3 id="séparation-du-code-html-du-code-javascript">Séparation du code HTML du code JavaScript</h3>
+
+<p><strong>Code structure html valide</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var server = http.createServer(function(req, res) {
+res.writeHead(200, {"Content-Type": "text/html"});
+res.write(
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;title&gt;</span>Ma page Node.js !<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;p&gt;</span>Voici un paragraphe <span class="nt">&lt;strong&gt;</span>HTML<span class="nt">&lt;/strong&gt;</span> !<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>);
+    res.end();
+});
+server.listen(8080);
+</code></pre></div></div>
+
+<p><strong>Récupérer la page demandée</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htmlvar url = require("url");
+</code></pre></div></div>
+<p><strong>obtenir le nom de la page demandée</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htmlurl.parse(req.url).pathname;
+</code></pre></div></div>
+<p><strong>Récupérer les parametre passés dans l’url</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ex:http://localhost:8080/page?prenom=Robert&amp;nom=Dupont
+url.parse(req.url).query
+</code></pre></div></div>
+<p><strong>Pour découper la chaine inclure ce module</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var querystring = require('querystring');
+puis
+var params = querystring.parse(url.parse(req.url).query);
+</code></pre></div></div>
+:ET

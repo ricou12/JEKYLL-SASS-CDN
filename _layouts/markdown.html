@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="container myFont3">
   <section class="row">
-    <div class="col-12  text-center">
+    <div class="col-12 text-center mt-1 mb-5 bg-secondary text-white p-2">
       <h1>MarkDown</h1>
     </div>
   </section>
@@ -42,7 +42,25 @@ layout: default
     ~~Ceci est un texte barré~~
     **Il est possible de les *combiner* comme ceci** ou *encore comme **ceci***</pre>
     </div>
-
+    <div class="col-12 shadow border bg-success text-white">
+        <br>
+        <h3>Les blocs</h3>
+        <pre>
+          ~~~html  
+          &lt;a&gt;ceci est un bloc avec du code html  &lt;/a&gt; 
+          ~~~ 
+        </pre> 
+        <pre>
+          ```  
+          var x = 1;
+          if (true) {
+            var x = 2;
+          }
+          
+          console.log(x);
+          ```
+          </pre> 
+    </div>
     <div class="col-12 shadow border bg-success text-white">
       <br>
       <h3>Les liens</h3>

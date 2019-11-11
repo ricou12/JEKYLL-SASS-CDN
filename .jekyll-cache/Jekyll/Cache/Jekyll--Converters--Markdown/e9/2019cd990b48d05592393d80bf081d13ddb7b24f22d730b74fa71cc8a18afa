@@ -1,0 +1,44 @@
+I"<<p>Node.js utiliser le langage JavaScript, il offre un environnement côté serveur en dehors du navigateur !</p>
+
+<p><strong>Installation</strong>:télécharger soit le .msi, soit le .exe</p>
+
+<p><em>Creer un serveur web</em> <strong>server.js</strong></p>
+
+<p>var http = require(‘http’);</p>
+
+<p>var server = http.createServer(function(req, res) {
+  res.writeHead(200);
+  res.end(‘Salut tout le monde !’);
+});
+server.listen(8080);</p>
+
+<p><strong>Lancer le serveur</strong></p>
+
+<p><em>A partir d’un terminal</em> 
+node server.js</p>
+
+<p><strong>Ouvrir le navigateur a l’adresse:</strong></p>
+
+<p>http://localhost:8080</p>
+
+<p>ou</p>
+
+<p>http://localhost:8080/mapage</p>
+
+<p>ou</p>
+
+<p>http://localhost:8080/dossier/autrepage</p>
+
+<p><strong>les types MIME</strong></p>
+
+<p>Le serveur doit indiquer le type de données</p>
+<ul>
+  <li>Du texte brut : text/plain</li>
+  <li>Du HTML : text/html</li>
+  <li>Du CSS : text/css</li>
+  <li>Une image JPEG : image/jpeg</li>
+  <li>Une vidéo MPEG4 : video/mp4</li>
+  <li>Un fichier ZIP : application/zip</li>
+  <li>etc</li>
+</ul>
+:ET

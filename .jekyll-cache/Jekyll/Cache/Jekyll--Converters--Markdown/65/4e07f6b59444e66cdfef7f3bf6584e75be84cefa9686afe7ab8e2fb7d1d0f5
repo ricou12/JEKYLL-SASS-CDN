@@ -1,0 +1,142 @@
+I"�<p>Node.js utilise le langage JavaScript (basé sur les évènements), il offre un environnement côté serveur en dehors du navigateur !</p>
+
+<p>C’est un modèle non bloquant : execute les commandes les unes après les autres sans attendre qu’ elles se terminent.</p>
+
+<p>Node.js est monothread (une seule version du programme qui peut tourner à la fois en mémoire)</p>
+
+<hr />
+
+<p><strong>Installation</strong> : télécharger soit le .msi, soit le .exe</p>
+
+<p><strong>Creer un serveur web simple</strong> : <em>server.js</em></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var http = require('http');
+var server = http.createServer(function(req, res) {
+res.writeHead(200, {"Content-Type": "text/html"});
+res.end('<span class="nt">&lt;p&gt;</span>Voici un paragraphe <span class="nt">&lt;strong&gt;</span>HTML<span class="nt">&lt;/strong&gt;</span> !<span class="nt">&lt;/p&gt;</span>');
+});
+
+server.listen(8080);
+</code></pre></div></div>
+
+<p><strong>Lancer le serveur</strong>
+A partir d’un terminal : <em>node server.js</em></p>
+
+<p><strong>Ouvrir le navigateur a l’adresse:</strong></p>
+
+<p>http://localhost:8080 ou http://localhost:8080/mapage ou http://localhost:8080/dossier/autrepage</p>
+
+<hr />
+
+<p><strong>les types MIME</strong></p>
+
+<p>Le serveur doit indiquer le type de données</p>
+<ul>
+  <li>Du texte brut : text/plain</li>
+  <li>Du HTML : text/html</li>
+  <li>Du CSS : text/css</li>
+  <li>Une image JPEG : image/jpeg</li>
+  <li>Une vidéo MPEG4 : video/mp4</li>
+  <li>Un fichier ZIP : application/zip</li>
+  <li>etc</li>
+</ul>
+
+<p>Ex : res.writeHead(200, {“Content-Type”: “text/html”});</p>
+
+<p><strong>inclure ce module pour utiliser le protocole http</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var http = require('http');
+</code></pre></div></div>
+
+<p><strong>HTML dans la réponse</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>res.end('&lt;p&gt;Voici un paragraphe &lt;strong&gt;HTML&lt;/strong&gt; !&lt;/p&gt;');
+var http = require('http');
+</code></pre></div></div>
+
+<p><strong>Code structure html valide</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var server = http.createServer(function(req, res) {
+res.writeHead(200, {"Content-Type": "text/html"});
+res.write(
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;title&gt;</span>Ma page Node.js !<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;p&gt;</span>Voici un paragraphe <span class="nt">&lt;strong&gt;</span>HTML<span class="nt">&lt;/strong&gt;</span> !<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>);
+    res.end();
+});
+server.listen(8080);
+</code></pre></div></div>
+
+<p><strong>Récupérer la page demandée</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var url = require("url");
+</code></pre></div></div>
+
+<p><strong>obtenir le nom de la page demandée</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url.parse(req.url).pathname;
+</code></pre></div></div>
+
+<p><strong>Récupérer les paramètres passés dans l’url</strong>
+ex:http://localhost:8080/page?prenom=Robert&amp;nom=Dupont</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url.parse(req.url).query
+</code></pre></div></div>
+
+<p><strong>Pour découper la chaine inclure ce module</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var querystring = require('querystring');
+</code></pre></div></div>
+
+<p><strong>Récuperer un tableau de paramètres “params”.</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var params = querystring.parse(url.parse(req.url).query);
+</code></pre></div></div>
+
+<p><strong>exemple de code</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var http = require('http');
+var url = require('url');
+var querystring = require('querystring');
+
+var server = http.createServer(function(req, res) {
+    var params = querystring.parse(url.parse(req.url).query);
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    if ('prenom' in params &amp;&amp; 'nom' in params) {
+        res.write('Vous vous appelez ' + params['prenom'] + ' ' + params['nom']);
+    }
+    else {
+        res.write('Vous devez bien avoir un prénom et un nom, non ?');
+    }
+    res.end();
+});
+server.listen(8080);
+</code></pre></div></div>
+<p>server.on(‘close’, function() {
+// Faire quelque chose quand le serveur est arrêté
+})</p>
+
+<p><strong>Export de function (accessible a partir d’un autre js)</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var direBonjour = function() {
+    console.log('Bonjour !');
+}
+
+var direByeBye = function() {
+    console.log('Bye bye !');
+}
+
+exports.direBonjour = direBonjour;
+exports.direByeBye = direByeBye;
+</code></pre></div></div>
+
+<h2 id="installer-des-modules">INSTALLER DES MODULES</h2>
+<p><strong>Les modules seront installés</strong> via la commande <strong>npm “install nomdumodule”</strong> et disponible avec node.
+<strong>Par défaut</strong> à l’intérieur du projet : npm install markdown
+Ou <strong>de manière globale</strong> : npm install markdown -g</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Utilisation dans le code :
+var markdown = require('markdown').markdown;
+</code></pre></div></div>
+<p>Mise à jour des modules : npm update
+Fixer les version de dépendances (éviter les riques d’incompatibilité ) : Utiliser fichier package.json et indiquer les versions de dépendances.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"dependencies": {
+    "markdown": "0.3.5" // Version 0.3.5 uniquement
+}
+</code></pre></div></div>
+:ET
