@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<article class="container">
+  <section class="row">
+    <aside class="col-12 text-center">
+      <h1>Jekyll</h1>
+    </aside>
+  </section>
+  <section class="row">
+    <div class="col-12">
+      <p class="bold">Générateur de sites statiques.</p>
+      <h3>Liens utiles</h3>
+      <p><a href="https://jekyllrb.com/">Jekyll - Transform your plain text into static websites and blogs.</a></p>
+      <p><a href="https://irz.fr/jekyll-liquid" target="_blank">Introduction à Liquid</a></p>
+      <ul>
+        <li>Accélère la productivité de projet web</li>
+        <li>Converti les fichiers markdown en html (langage de balisage plus léger que html)</li>
+        <li>Embarque Sass (préprocesseur CSS)</li>
+        <li>Intègre le moteur de template Liquid</li>
+      </ul>
+      <h3>Démarrage</h3>
+      <ul>
+        <li>Avec le terminal d'un éditeur de code</li>
+        <li>Avec une console (Bash, Shell ...)</li>
+      </ul>
+      <h3>Installation</h3>
+      <p class="bold"> gem install bundler jekyll</p>
+      <p><span class="bold"> jekyll new mon-site-web</span> : Pour créer un nouveau projet</p>
+      <p><span class="bold"> cd mon-site-web</span> : Pour se placer dans le repertoire du projet.</p>
+      <p><span class="bold">bundle exec jekyll serve</span> : Install et execute le server. </p>
+      <p> http://localhost:4000 : Pour consulter ses pages.</p>
+
+      <h3>Fonctionalités</h3>
+      <h4>Les dossiers du projet</h4>
+      <ul>
+        <li>Un dossier <span class="bold">assets</span> dans la racine du projet, créer des sous-dossiers pour le css,
+          images ...</li>
+        <li><span class="bold">_includes</span> : morceaux de codes liés à une page html </li>
+        <li><span class="bold">_layouts</span> : pages md ou html principale et autre bloc de code integrant les
+          includes et traitement de données
+          avec Liquid.</li>
+        <li><span class="bold">_sass</span> : Regroupe les fichiers *.scss (feuille de style)</li>
+        <li><span class="bold">_post</span> : pour stocker des articles type Markdown (*.md) dans le cadre de blog</li>
+        <li><span class="bold">_data</span> : pour stocker des tableaux de données dans des fichiers type yaml, gson ...
+        </li>
+      </ul>
+      <h4><a href="{{"/templates/sass.html"|relative_url}}">SASS</a></h4>
+      <p>Jekyll génére autant de fichiers css à partir de scss du moment ou ils contiennent un front matter.</p>
+      <p>Vou pouvez éditer plusieurs fichiers scss dans le dossier "_sass" pour alléger le code, le rendre plus clair,
+        accessible à la lecture et séparer les fonctionalités. <br> Pour cela éditez un fichier scss dans le dossier
+        assets par exemple <br> Importer toutes les dépendances que vous avez edité dans le dossier _sass. </p>
+      <pre>
+               ---
+               # front matter
+               ---
+               @import "./style1.scss";
+               @import "./style2.scss";
+               etc ...
+           </pre>
+
+
+
+
+    </div>
+  </section>
+</article>
