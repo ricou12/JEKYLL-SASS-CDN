@@ -1,0 +1,42 @@
+// USE MIXIN WITH @INCLUDE
+.bg {
+  &-color {
+
+    &--blue {
+      @include color-grad-blue;
+      @include shadow-leftToRight;
+      color: rgba(0, 18, 254, 0.4);
+      &:hover{
+        color: white;
+      }
+    }
+
+    &--gray {
+      @include color-grad-gray;
+      @include shadow-leftToRight;
+      color:rgba(40, 52, 59, 1);
+      &:hover{
+        color: white;
+      }
+    }
+
+    &--red {
+      @include color-grad-red;
+      @include shadow-leftToRight;
+      color:rgb(134, 11, 2);
+      &:hover{
+        color: white;
+      }
+    }
+
+    &--green {
+      @include color-grad-green;
+      @include shadow-leftToRight;
+      color:rgba(41,154,11,1);
+      &:hover{
+        color: white;
+      }
+    }
+    
+  }
+}

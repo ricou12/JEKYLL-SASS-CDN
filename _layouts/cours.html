@@ -4,160 +4,162 @@ layout: default
 
 <div class="container myFont4">
   <div class="row">
-    <div class="col-12 mt-1 shadow p-2">
+    <div class="col-12 mt-1 p-2">
       <div class="search">
         <h6>Rechercher un cours par mot clé.</h6>
         <input class="search__text" type="text" id="input-search">
         <button class="search__button" onclick="mySearch();">Search</button>
       </div>
     </div>
-    <div class="col-12"  id="return-result">
-        <!-- generated in JavaScript -->
-  </div>
-</div>
-
-<article class="container myFont3">
-  <div class="row d-flex justify-content-center mt-2">
-    <div class="col-12 col-lg-6 shadow">
-      <div class="row">
-        <div class="col-12 text-center bg-secondary text-white p-2">
-          <h1>Cours Front end</h1>
-        </div>
-      </div>
-      <div class="row">
-        {% if site.tuto.size > 0 %}
-        <!-- Trie les fichiers MD dans la première colonne via le critère de recherche "frontEnd" -->
-        {% assign group = site.tuto |  where:"type","frontEnd"  %}
-        <!-- Ordonne les fichiers MD via la variable number -->
-        {% assign orderItem = group | sort: 'number'  %}
-        <!-- Parcours les fichiers MD triés dans une boucle  -->
-        {% for tuto in orderItem %}
-        <section class="col-12 col-sm-6">
-          <div class="card shadow m-2" style="min-height:350px;">
-            <!-- Récupère la propriété pathImg -->
-            <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
-            <div class="card-body">
-              <!-- Récupère le titre -->
-              <h3 class="card-title">{{tuto.title}}</h3>
-              <!-- Récupère les commentaires -->
-              <p class="card-text">{{tuto.comment}}</p>
-              <div class="d-flex justify-content-center">
-                <!-- Affiche le lien -->
-                <!-- Affiche le lien -->
-                {% if tuto.link %}
-                <a href="{{ tuto.link | relative_url }}" class="btn btn-outline-info">
-                  Accèder au cours
-                  {% else  %}
-                  <a href="#" class="btn btn-outline-info  disabled">
-                    cours à venir
-                    {% endif  %}
-                  </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-    <div class="col-12 col-lg-6 shadow">
-
-      <div class="row">
-        <div class="col-12 text-center bg-secondary text-white p-2">
-          <h1>Cours Back End</h1>
-        </div>
-        {% if site.tuto.size > 0 %}
-        <!-- Trie les fichiers MD dans la deuxième colonne via le critère de recherche "backEnd" -->
-        {% assign group = site.tuto |  where:"type","backEnd"  %}
-        <!-- Ordonne les fichiers MD via la variable number -->
-        {% assign orderItem = group | sort: 'number'  %}
-        <!-- Parcours les fichiers MD triés dans une boucle  -->
-        {% for tuto in orderItem %}
-        <section class="col-12 col-sm-6">
-          <div class="card shadow m-2" style="min-height:350px;">
-            <!-- Récupère la propriété pathImg -->
-            <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
-            <div class="card-body">
-              <!-- Récupère le titre -->
-              <h3 class="card-title">{{tuto.title}}</h3>
-              <!-- Récupère les commentaires -->
-              <p class="card-text">{{tuto.comment}}</p>
-              <div class="d-flex justify-content-center">
-                <!-- Affiche le lien -->
-                {% if tuto.link %}
-                <a href="{{ tuto.link | relative_url }}" class="btn btn-outline-info">
-                  Accèder au cours
-                  {% else  %}
-                  <a href="#" class="btn btn-outline-info  disabled">
-                    cours à venir
-                    {% endif  %}
-                  </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        {% endfor %}
-        {% endif %}
-      </div>
+    <div class="col-12" id="return-result">
+      <!-- generated in JavaScript -->
     </div>
   </div>
-</article>
+
+  <article class="container myFont3">
+    <div class="row d-flex justify-content-center mt-2">
+      <div class="col-12 col-lg-6">
+        <div class="row">
+          <div class="col-12 text-center text-white p-2 myFont2 bg-color--blue">
+            <h1>Cours Front end</h1>
+          </div>
+        </div>
+        <div class="row">
+          {% if site.tuto.size > 0 %}
+          <!-- Trie les fichiers MD dans la première colonne via le critère de recherche "frontEnd" -->
+          {% assign group = site.tuto |  where:"type","frontEnd"  %}
+          <!-- Ordonne les fichiers MD via la variable number -->
+          {% assign orderItem = group | sort: 'number'  %}
+          <!-- Parcours les fichiers MD triés dans une boucle  -->
+          {% for tuto in orderItem %}
+          <section class="col-12 col-sm-6">
+            <div class="card shadow m-2" style="min-height:350px;">
+              <!-- Récupère la propriété pathImg -->
+              <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
+              <div class="card-body">
+                <!-- Récupère le titre -->
+                <h3 class="card-title">{{tuto.title}}</h3>
+                <!-- Récupère les commentaires -->
+                <p class="card-text">{{tuto.comment}}</p>
+                <div class="d-flex justify-content-center">
+                  <!-- Affiche le lien -->
+                  <!-- Affiche le lien -->
+                  {% if tuto.link %}
+                  <a href="{{ tuto.link | relative_url }}" class="btn bg-color--red">
+                    Accèder au cours
+                    {% else  %}
+                    <a href="#" class="btn bg-color--gray  disabled">
+                      cours à venir
+                      {% endif  %}
+                    </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 shadow-lg">
+
+        <div class="row">
+          <div class="col-12 text-center text-white p-2 myFont2 bg-color--blue">
+            <h1>Cours Back End</h1>
+          </div>
+          {% if site.tuto.size > 0 %}
+          <!-- Trie les fichiers MD dans la deuxième colonne via le critère de recherche "backEnd" -->
+          {% assign group = site.tuto |  where:"type","backEnd"  %}
+          <!-- Ordonne les fichiers MD via la variable number -->
+          {% assign orderItem = group | sort: 'number'  %}
+          <!-- Parcours les fichiers MD triés dans une boucle  -->
+          {% for tuto in orderItem %}
+          <section class="col-12 col-sm-6">
+            <div class="card shadow m-2" style="min-height:350px;">
+              <!-- Récupère la propriété pathImg -->
+              <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
+              <div class="card-body">
+                <!-- Récupère le titre -->
+                <h3 class="card-title">{{tuto.title}}</h3>
+                <!-- Récupère les commentaires -->
+                <p class="card-text">{{tuto.comment}}</p>
+                <div class="d-flex justify-content-center">
+                  <!-- Affiche le lien -->
+                  {% if tuto.link %}
+                  <a href="{{ tuto.link | relative_url }}" class="btn bg-color--redDark">
+                    Accèder au cours
+                    {% else  %}
+                    <a href="#" class="btn bg-color--gray disabled">
+                      cours à venir
+                      {% endif  %}
+                    </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </article>
 
 
-<!-- Export site data for search -->
-<script type="application/javascript">
-  const $inputSearch= document.getElementById("input-search");
-  const $resultContainer = document.getElementById('return-result');
+  <!-- Export site data for search -->
+  <script type="application/javascript">
+    const $inputSearch = document.getElementById("input-search");
+    const $resultContainer = document.getElementById('return-result');
 
-  const tutos = [
-  {%- for tuto in site.tuto -%}
-  {
-    title: "{{ tuto.title }}",
-    url: "{{ tuto.link }}",
-    commentaire: "{{ tuto.comment }}"
-  },
-  {%- endfor -%}
-  ];
+    const tutos = [
+      {%- for tuto in site.tuto -%}
+       {
+        title: "{{ tuto.title }}",
+        url: "{{ tuto.link }}",
+        commentaire: "{{ tuto.comment }}"
+      },
+      {%- endfor -%}
+     ];
 
-  // console.log(tutos);
+    // console.log(tutos);
 
-  // Filtre le tableau de données et ne retourne que les éléments d'intérêt
-  function search(word){
-    return tutos.filter(tuto => {
-      return strContains(tuto.title, word,tuto.url);
-    })
-  }
-  // const searchResults = search("J");
-  // console.log(searchResults);
+    // Filtre le tableau de données et ne retourne que les éléments d'intérêt
+    function search(word) {
+      return tutos.filter(tuto => {
+        return strContains(tuto.title, word, tuto.url);
+      })
+    }
+    // const searchResults = search("J");
+    // console.log(searchResults);
 
-  // True si string contients word
-  function strContains(string, word,url){
-    // Limite la cass
-    string = string.toLowerCase();
-    word = word.toLowerCase();
-    console.log("Chaines converties en minuscules : "+ string +"   "+word);
-    // Ne retourne que les cours dont url pointe vers un url.
-    if (url){
-      return string.indexOf(word) > -1;
-    } 
-  }
+    // True si string contients word
+    function strContains(string, word, url) {
+      // Limite la cass
+      string = string.toLowerCase();
+      word = word.toLowerCase();
+      console.log("Chaines converties en minuscules : " + string + "   " + word);
+      // Ne retourne que les cours dont url pointe vers un url.
+      if (url) {
+        return string.indexOf(word) > -1;
+      }
+    }
 
-  function userSearch(word){
-    const searchResults = search(word) || [];
-    let html = "";
-    searchResults.forEach(function(result){
-            
-      html += `
+    function userSearch(word) {
+      const searchResults = search(word) || [];
+      let html = "";
+      searchResults.forEach(function (result) {
+
+        html += `
         <a class="btn btn-success mb-1" href="{{ site.baseurl }}${result.url}">${result.title}</a>
       `;
-    });
-    html = `<div class="row"><div class="col-12 mt-1 bg-dark border border-dark p-2 shadow-lg text-white"><h6>Resultat de ma recherhe</h6>${html}</div></div>`
-    $resultContainer.innerHTML = html;
-  }
-  //  userSearch('J');
+      });
+      html =
+        `<div class="row"><div class="col-12 mt-1 bg-dark border border-dark p-2 shadow-lg text-white"><h6>Resultat de ma recherhe</h6>${html}</div></div>`
+      $resultContainer.innerHTML = html;
+    }
+    //  userSearch('J');
 
-  function mySearch(){
-    const maRecherche = $inputSearch.value;
-    userSearch(maRecherche);
-  }
-</script>
+    function mySearch() {
+      const maRecherche = $inputSearch.value;
+      userSearch(maRecherche);
+    }
+
+  </script>
