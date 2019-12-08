@@ -3,9 +3,7 @@ layout : default
 ---
 
 <main class="container myFont3">
-
-  <div class="row ">
-
+  <div class="row">
     <section class="col-12 text-center mt-1 mb-5 bg-secondary text-white p-2">
       <h1>SASS</h1>
       <p>Syntactically Awesome Style Sheets</p>
@@ -33,7 +31,7 @@ layout : default
           </p>
           <div class="row">
             <div class="col-12 d-flex justify-content-center">
-              <img class=" shadow-lg" src="{{"/images/contact/package.png" | relative-url}}" alt="package.json">
+              <img class=" shadow-lg" src="{{"./images/contact/package.png" | relative_url}}" alt="package.json">
             </div>
           </div>
           <ul>
@@ -53,7 +51,7 @@ layout : default
                 commande
                 "npm install" pour installer automatiquement les dépendances vers le dossier node_module.</p>
             </li>
-          </ul> 
+          </ul>
         </li>
         <li><span class="bold">Installer node-sass</span> pour compiler les fichiers scss au format css.
           <p>En effet les navigateurs sont incapables d'interprêter ce type fichier.
@@ -123,16 +121,16 @@ layout : default
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="row d-flex justify-content-center">
-            <img class=" border border-light shadow-lg" src="{{"/images/contact/variables.png"|relative-url}}" alt="">
+            <img class=" border border-light shadow-lg" src="{{"/images/contact/variables.png"|relative_url}}" alt="">
             <p>Ici on déclare une collection de couleur sous forme de tableau.</p>
           </div>
         </div>
         <div class="col-12 col-md-6">
           <div class="row">
-            <img class=" border border-light shadow-lg" src="{{"/images/contact/fonctionCouleur.png"|relative-url}}"
+            <img class=" border border-light shadow-lg" src="{{"/images/contact/fonctionCouleur.png"|relative_url}}"
               alt="fonction-couleur">
             <p>On crée une fonction qui renvoie la couleur.</p>
-            <img src="{{"/images/contact/classcolor.png"|relative-url}}" alt="class-color">
+            <img src="{{"/images/contact/classcolor.png"|relative_url}}" alt="class-color">
             <p>Utilise une classe pour attribuer cette couleur à la propriété color.</p>
           </div>
         </div>
@@ -149,10 +147,10 @@ layout : default
         <li>@import étend la règle CSS at pour charger des styles, des mixins, des fonctions et des variables à partir
           d'autres feuilles de style.</li>
         <div class="row">
-          <div class="col-12 col-md-6"><img src="{{"/images/contact/import.png"|relative-url}}" alt="sass-@import">
-          </div>
+          <img class="col-12 col-md-6" src="{{"/images/contact/import.png"|relative_url}}" alt="sass-@import">
           <div class="col-12 col-md-6 d-flex align-items-center">
-            <p>Ici l'ensemble des fichiers scss sont importés vers le fichier principal. Lors de la compilation
+            <p>Ici l'ensemble des fichiers scss sont importés vers le fichier principal. Lors de
+              la compilation
               l'intégralité des fichiers scss importés seront ajouté au fichier css final. </p>
           </div>
         </div>
