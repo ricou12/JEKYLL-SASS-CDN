@@ -1,0 +1,232 @@
+I"H3<h1 id="-éléments-du-dom-"><center> Éléments du DOM </center></h1>
+
+<h2 id="modifiez-le-contenu-dun-élément">Modifiez le contenu d’un élément</h2>
+<p>Les deux principales sont : <code class="highlighter-rouge">innerHTML</code> et textContent.</p>
+
+<h2 id="document--récupérer-des-éléments">Document : récupérer des éléments</h2>
+
+<h3 id="trouver-cet-élément">Trouver cet élément</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p id="my-anchor"&gt;My content&lt;/p&gt;
+const myAnchor = document.getElementById('my-anchor');
+</code></pre></div></div>
+<h3 id="retourne-la-liste-des-éléments">Retourne la liste des éléments</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const contents = document.getElementsByClassName('content');
+const firstContent = contents[0];
+</code></pre></div></div>
+<h3 id="retourne-tous-les-éléments-nom-de-balise">Retourne tous les éléments nom de balise</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const articles = document.getElementsByTagName('article');
+const thirdArticle = articles[2];
+</code></pre></div></div>
+<h3 id="retourne-le-premier-élément-qui-correspond-à-la-recherche">Retourne le premier élément qui correspond à la recherche</h3>
+<p><code class="highlighter-rouge">document.querySelector("#myId p.article &gt; a");</code></p>
+
+<h3 id="retourne-la-liste-des-éléments-1">Retourne la liste des éléments</h3>
+<p><code class="highlighter-rouge">document.querySelectorAll();</code></p>
+
+<h2 id="élément">Élément</h2>
+
+<h3 id="retourne-la-liste-des-enfants-">Retourne la liste des enfants :</h3>
+
+<p><strong><em>element.children</em></strong></p>
+
+<p><strong><em>Retourne l’élément parent</em></strong></p>
+
+<p><strong><em>element.parentElement</em></strong>
+<em>Permettent de naviguer vers l’élément suivant / précédent de même niveau que notre élément :</em>
+<code class="highlighter-rouge">element.nextElementSibling / element.previousElementSibling</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let elt = document.getElementById('main');
+elt.innerHTML = "&lt;ul&gt;&lt;li&gt;Elément 1&lt;/li&gt;&lt;li&gt;Elément 2&lt;/li&gt;&lt;/ul&gt;";
+_Résultat_
+&lt;div id="main"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Elément 1&lt;/li&gt;
+    &lt;li&gt;Elément 2&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+<h3 id="propriété-classlist-">Propriété classList :</h3>
+<p>Accéder directement à la liste des classes</p>
+
+<p><strong>Ajoute une classe à l’élément</strong>
+<code class="highlighter-rouge">elt.classList.add("nouvelleClasse");</code></p>
+
+<p><strong>Supprime une classe</strong>
+<code class="highlighter-rouge">elt.classList.remove("nouvelleClasse");</code></p>
+
+<p><strong>Rechercher une class renvoi un booléen</strong>
+<code class="highlighter-rouge">elt.classList.contains("nouvelleClasse")</code></p>
+
+<p><strong>Rechercher et remplacer</strong>
+<code class="highlighter-rouge">elt.classList.replace("oldClass", "newClass");</code></p>
+
+<h3 id="propriété-styles">Propriété styles</h3>
+<p><code class="highlighter-rouge">elt.style.color = "#fff";  // Change la couleur du texte de l'élément à blanche</code>
+<code class="highlighter-rouge">elt.style.backgroundColor = "#000"; // Change la couleur de fond de l'élément en noir</code>
+<code class="highlighter-rouge">elt.style.fontWeight = "bold"; // Met le texte de l'élément en gras</code></p>
+
+<h3 id="modifiez-les-attributs">Modifiez les attributs</h3>
+<p>Définir ou remplacer les attributs d’un élément
+<code class="highlighter-rouge">element.setAttribute(&lt;name&gt;, &lt;value&gt; ) ;</code></p>
+
+<h3 id="créez-un-nouvel-élément">Créez un nouvel élément</h3>
+<p>L’élément ne fait pas encore partie du document
+<code class="highlighter-rouge">const newElt = document.createElement("div");</code></p>
+
+<h3 id="ajouter-le-nouvel-élément">Ajouter le nouvel élément</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const newElt = document.createElement("div");
+let elt = document.getElementById("main");
+{ elt.appendChild(newElt);
+ou
+document.getElementById("main").appendChild(document.createElement("div"));
+</code></pre></div></div>
+<h3 id="supprimez-et-remplacez-des-éléments">Supprimez et remplacez des éléments</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const newElt = document.createElement("div");
+let elt = document.getElementById("main");
+// ajoute l’élément
+elt.appendChild(newElt);  
+// Supprime l'élément newElt de l'élément elt
+elt.removeChild(newElt); 
+// Remplace l'élément newElt par un nouvel élément de type article
+elt.replaceChild(document.createElement("article"), newElt);
+</code></pre></div></div>
+<h3 id="les-événements">Les événements</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Ecoute cet evenement
+element.addEventListener('click', onClick);
+// On récupère l'élément sur lequel on veut détecter le clic
+const elt = document.getElementById('mon-lien'); 
+// On écoute l'événement click, notre callback prend un paramètre que nous avons appelé event ici.
+elt.addEventListener('click', function() { 
+ // On change le contenu de notre élément pour afficher "C'est cliqué !" 
+elt.innerHTML = "C'est cliqué !"; 
+});
+</code></pre></div></div>
+<p><strong>Empêchera le formulaire de s’envoyer au serveur lors d’un événement onsubmit,  donc ne rafraichi la page.</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// On récupère l'élément sur lequel on veut détecter le clic.
+const elt = document.getElementById('mon-lien'); 
+elt.addEventListener('click', function(event) { 
+// On écoute l'événement click, notre callback prend un paramètre que nous avons appelé event ici.
+</code></pre></div></div>
+<p><strong>Empêcher la propagation de l’événement vers son parent.</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>elementInterieur.addEventListener('click', function(event) {
+event.stopPropagation();
+elementAvecMessage.innerHTML = "Message de l'élément intérieur";
+});
+</code></pre></div></div>
+<p><strong>Mouvement de la souris</strong>
+<em><code class="highlighter-rouge">Mousemove</code></em> fournit un objet de type <strong><code class="highlighter-rouge">MouseEvent</code></strong>
+Dès que la souris bouge notre fonction <em>callback</em> sera appelée avec un paramètre de type <em>MouseEvent</em>.</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">clientX</code> / <code class="highlighter-rouge">clientY</code> : position de la souris dans les coordonnées locales (contenu du DOM) ;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">offsetX</code> / <code class="highlighter-rouge">offsetY</code> : position de la souris par rapport à l’élément sur lequel on écoute l’événement ;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">pageX</code> / <code class="highlighter-rouge">pageY</code> : position de la souris par rapport au document entier ;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">screenX</code> / <code class="highlighter-rouge">screenY</code> : position de la souris par rapport à la fenêtre du navigateur ;</p>
+  </li>
+  <li><code class="highlighter-rouge">movementX</code> / <code class="highlighter-rouge">movementY</code> : position de la souris par rapport à la position de la souris lors du dernier événement <code class="highlighter-rouge">mousemove</code>.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>document.getElementById('result').addEventListener('mousemove',function(e){
+document.getElementById('mouse-x').innerHTML = e.offsetX;
+document.getElementById('mouse-y').innerHTML = e.offsetY;
+});
+</code></pre></div>    </div>
+    <p><strong>Contenu d’un champ texte, événement change</strong>
+Fonctionne avec les éléments de type &lt;<code class="highlighter-rouge">input&gt;</code>, &lt;<code class="highlighter-rouge">select&gt;</code> et &lt;<code class="highlighter-rouge">textarea&gt;</code>,  <code class="highlighter-rouge">checkbox,</code>  <code class="highlighter-rouge">radio</code>.
+Avoir la valeur dès que l’utilisateur ajoute ou supprime une lettre</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>input.addEventListener('input', function(event) {
+output.innerHTML = event.target.value;
+});
+</code></pre></div>    </div>
+    <p><strong>Input text</strong></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>document.getElementById('name').addEventListener('input',function(e){
+document.getElementById('res-name').innerHTML = e.target.value ;
+ou
+document.getElementById('res-name').textContent =  e.target.value ;
+});
+</code></pre></div>    </div>
+    <p><strong>Bouton d’option</strong></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>document.getElementById('gender').addEventListener('change',function(e){
+document.getElementById('res-gender').innerHTML = e.target.value;
+});
+</code></pre></div>    </div>
+    <h2 id="les-services-web">Les services web</h2>
+    <p>Programme s’exécutant sur un serveur répondant à des <em>*requêtes utilisant le protocole http (</em>HyperText Transfer Protocol*).</p>
+  </li>
+  <li>L’envoi de mail (<em>SMTP</em>)</li>
+  <li>La réception de mail (<em>IMAP</em>)</li>
+  <li>Ressources web (<em>HTTP)</em></li>
+  <li>Transferts de fichiers (<em>FTP</em>)</li>
+</ul>
+
+<h3 id="les-codes-http">Les codes HTTP.</h3>
+
+<ul>
+  <li>
+    <p><strong>100 à 199</strong> sont des codes d’<strong>information</strong></p>
+  </li>
+  <li>
+    <p><strong>200 à 299</strong> sont des codes de <strong>succès</strong>.</p>
+  </li>
+  <li>
+    <p><strong>300 à 399</strong> sont les codes de <strong>redirection</strong></p>
+  </li>
+  <li>
+    <p><strong>400 à 499</strong> sont des codes d’<strong>erreur</strong> liés à l’<strong>utilisation du service web</strong></p>
+  </li>
+  <li>
+    <p><strong>500 à 599</strong> sont des codes d’<strong>erreur</strong> venant du <strong>service web</strong></p>
+  </li>
+</ul>
+
+<h3 id="les-méthodes-http">Les méthodes http</h3>
+<ul>
+  <li><strong>GET</strong> : permet de <strong>récupérer</strong> des ressources, comme par exemple le temps actuel sur un service de météo ;</li>
+  <li><strong>POST</strong> : permet de <strong>créer</strong> ou <strong>modifier</strong> une ressource, comme la création d’un nouvel utilisateur sur votre application ;</li>
+  <li><strong>PUT</strong> : permet de <strong>modifier</strong> une ressource, comme le nom de l’utilisateur que vous venez de créer avec <em>POST</em> ;</li>
+  <li><strong>DELETE</strong> : Permet de <strong>supprimer</strong> une ressource, comme un commentaire dans un fil de discussion.</li>
+</ul>
+
+<p><em><strong>API</strong></em>  _Signifie _Application Programming Interface__
+<em>Interface</em> mettant à disposition des <em>points d’accès</em> vers les ressources de l’application.</p>
+
+<p><em><strong>AJAX</strong></em>  signifie en fait <em>Asynchronous JavaScript And XML</em>.
+<em>Ensemble d’objets et de fonctions</em> pour des requêtes HTTP de manière asynchrone, sans avoir besoin de recharger la page du navigateur.</p>
+
+<p><strong>Méthode GET</strong> Envoyer une requête (AJAX)
+Les données sont renvoyées dans un <em>format Json</em>.`</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var request = new XMLHttpRequest();
+request.open("GET", "http://url-service-web.com/api/users");
+request.send();
+</code></pre></div></div>
+<p><a href="https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch">Préférer l’API fetch()</a>  fournit une interface JavaScript plus simple pour récupérer des ressources à travers le réseau de manière asynchrone (dispo dans les nouveaux navigateur)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var myImage = document.querySelector('img');
+fetch('flowers.jpg')
+.then(function(response) {
+return response.blob();
+})
+.then(function(myBlob) {
+var objectURL = URL.createObjectURL(myBlob);
+myImage.src = objectURL;
+});
+</code></pre></div></div>
+<p>Données au format JSON <em>JavaScript Object Notation</em></p>
+
+<p><strong>Validez les données saisies par vos utilisateurs</strong>
+Never trust user input ! <em>Ne faites jamais confiance aux données saisies par vos utilisateurs !</em></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myInput.addEventListener('input', function(e) {
+var value = e.target.value;
+if (value.startsWith('Hello ')) {
+isValid = true;
+} else {
+isValid = false;
+}
+});
+</code></pre></div></div>
+<p><strong>Avec des regex</strong></p>
+
+<p>format spécial qui permet de <em>matcher</em> du texte</p>
+:ET
