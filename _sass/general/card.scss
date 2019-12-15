@@ -1,0 +1,40 @@
+.card {
+  position: relative;
+  border-radius: 7px;
+
+  img {
+    border-radius: 7px 7px 0 0;
+  }
+
+  &-body {
+    position: relative;
+    z-index: 9;
+    background-color: rgba(7, 7, 7, 0.8);
+    color: white;
+    border-radius: 0 0 7px 7px;
+    margin-top: 2px;
+  }
+
+  &__fond {
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    border-radius: 7px;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    .card__fond {
+      background-color: rgba(255, 255, 255, 0.4);
+      width: 100%;
+    }
+  }
+
+  a {
+    position: relative;
+    z-index: 10;
+  }
+}

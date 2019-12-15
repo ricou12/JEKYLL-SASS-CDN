@@ -3,7 +3,7 @@ layout : default
 titre : Portfolio
 ---
 <main class="container mt-1">
-  <aticle class="row">
+  <article class="row">
     <!-- Titre de la page -->
     <section class="col-12 text-center myFont3 p-3">
       <h1>Portfolio</h1>
@@ -11,18 +11,18 @@ titre : Portfolio
         <h4>Lien vers Github</h4>
       </a>
     </section>
+  </article>
+  <article class="row">
     <!-- FRONT END -->
-    <section class="front-end col-12 col-md-6 p-3 ">
+    <section class="front-end col-12 col-md-6 p-3">
       <aside class="front-end__title alert alert-secondary shadow-lg" role="alert">
         <h3 class="mb-4">Front-end</h3>
-        <p>Ensemble des technologies dites statique et dynamique, il s'agit des éléments du site que l'on
-          voit à l'écran et avec lesquels on peut interagir. Ces éléments sont composés de HTML, CSS et de Javascript
-          contrôlés par le navigateur web de l'utilisateur.</p>
+        <p>Il s'agit des éléments du site que l'on voit à l'écran et avec lesquels on peut interagir. Ces éléments sont composés de HTML, CSS et de Javascript contrôlés par le navigateur web de l'utilisateur.</p>
         <p>
-          Technologie dite statique:
-          - HTML, CSS, framework Bootstrap ...
-          - JAVASCRIPT, framework Jquery ...
-        </p>
+          Web statique:</br>
+          - HTML, CSS, framework Bootstrap...</br>
+          Web dynamique:</br>
+          - Javascript, framework Jquery... </p>  
       </aside>
     </section>
     <!-- BACK END -->
@@ -38,7 +38,9 @@ titre : Portfolio
         </p>
       </aside>
     </section>
-    <section class="back-end col-12 d-flex flex-row justify-content-between flex-wrap">
+  </article>
+  <article class="row">
+    <section class="back-end col-12 d-flex flex-row flex-wrap justify-content-around">
       <!-- <aside> -->
         {%- if site.frontEnd.size > 0 -%}
         {% assign wStatic = site.frontEnd  | sort: 'identifiant' %}
