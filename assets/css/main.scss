@@ -3,7 +3,8 @@
 # only Main files contain this front matter,
 # not partials.
 ---
- 
+
+@import "./general/main-general";
 @import "./components/main-components.scss";
 //importations scss, et intégré à notre css final.
-@import "./general/main-general";
+

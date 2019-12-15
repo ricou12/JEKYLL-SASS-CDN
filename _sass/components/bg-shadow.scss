@@ -5,7 +5,7 @@
     &--blue {
       @include color-grad-blue;
       @include shadow-leftToRight;
-      color: rgba(0, 18, 254, 0.4);
+      color: rgba(0, 17, 254, 0.719);
       &:hover{
         color: white;
       }

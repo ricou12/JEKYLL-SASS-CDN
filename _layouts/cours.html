@@ -2,9 +2,14 @@
 layout: default
 ---
 
-<div class="container myFont4">
+<main class="container myFont4">
   <div class="row">
-    <div class="col-12 mt-1 p-2">
+    <section class="col-12 text-center myFont3 p-3">
+      <h1>Cours sur le web</h1>
+    </section>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-1 p-2 d-flex justify-content-center">
       <div class="search">
         <h6>Rechercher un cours par mot clé.</h6>
         <input class="search__text" type="text" id="input-search">
@@ -20,8 +25,8 @@ layout: default
     <div class="row d-flex justify-content-center mt-2">
       <div class="col-12 col-lg-6">
         <div class="row">
-          <div class="col-12 text-center text-white p-2 myFont2 bg-color--blue">
-            <h1>Cours Front end</h1>
+          <div class="col-12 text-center p-2 myFont2 text3d">
+            <h2>Cours Front end</h2>
           </div>
         </div>
         <div class="row">
@@ -45,12 +50,12 @@ layout: default
                   <!-- Affiche le lien -->
                   <!-- Affiche le lien -->
                   {% if tuto.link %}
-                  <a href="{{ tuto.link | relative_url }}" class="btn bg-color--red">
+                    <a href="{{ tuto.link | relative_url }}" class="btn btn-primary">
                     Accèder au cours
-                    {% else  %}
-                    <a href="#" class="btn bg-color--gray  disabled">
-                      cours à venir
-                      {% endif  %}
+                  {% else  %}
+                    <a href="#" class="btn btn-secondary disabled">
+                    cours à venir
+                  {% endif  %}
                     </a>
                 </div>
               </div>
@@ -60,11 +65,11 @@ layout: default
           {% endif %}
         </div>
       </div>
-      <div class="col-12 col-lg-6 shadow-lg">
 
+      <div class="col-12 col-lg-6">
         <div class="row">
-          <div class="col-12 text-center text-white p-2 myFont2 bg-color--blue">
-            <h1>Cours Back End</h1>
+          <div class="col-12 text-center p-2 myFont2 text3d">
+            <h2>Cours Back End</h2>
           </div>
           {% if site.tuto.size > 0 %}
           <!-- Trie les fichiers MD dans la deuxième colonne via le critère de recherche "backEnd" -->
@@ -85,10 +90,10 @@ layout: default
                 <div class="d-flex justify-content-center">
                   <!-- Affiche le lien -->
                   {% if tuto.link %}
-                  <a href="{{ tuto.link | relative_url }}" class="btn bg-color--redDark">
+                  <a href="{{ tuto.link | relative_url }}" class="btn btn-primary">
                     Accèder au cours
                     {% else  %}
-                    <a href="#" class="btn bg-color--gray disabled">
+                    <a href="#" class="btn btn-secondary disabled">
                       cours à venir
                       {% endif  %}
                     </a>
@@ -102,7 +107,7 @@ layout: default
       </div>
     </div>
   </article>
-
+</main>
 
   <!-- Export site data for search -->
   <script type="application/javascript">

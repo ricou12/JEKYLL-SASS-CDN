@@ -12,9 +12,9 @@ collections:
     output: true  
   images:
     output: true
-  web-static:
+  frontEnd:
     output: true
-  web-dynamic:
+  back-end:
     output: true
   tuto:
     output: true

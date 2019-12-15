@@ -1,0 +1,58 @@
+.carte {
+  position: relative;
+  font-family: 'Cormorant', serif;
+  margin-bottom: 2em;
+  min-width: 300px;
+  max-width: 47%;
+  color: white;
+  border-radius: 5px;
+  padding-top: 70px;
+
+  
+
+  &__image {
+    width: 100%;
+  }
+
+  &__info {
+    position: absolute;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+    background-color: rgba(10, 10, 11, 0.8);
+    overflow: hidden;
+    border-radius: 7px 7px 0px 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 70px;
+
+    &__title {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    &__comment {
+      padding: 1em;
+      font-family: 'Nanum Myeongjo', serifGeorgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    &__link {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 1em;
+      font-family: 'Nanum Myeongjo', serifGeorgia, Cambria, "Times New Roman", Times, serif;
+      font-size: 1.5em;
+    }
+  }
+
+  &:hover {
+    .carte__info {
+      height: 100%;
+    }
+  }
+}

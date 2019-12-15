@@ -3,46 +3,79 @@ layout : default
 titre : Portfolio
 ---
 <main class="container mt-1">
-
   <aticle class="row">
-      
     <!-- Titre de la page -->
-    <section class="col-12 text-center  bg-color--blue text-white p-2">
-     <h1>Portfolio</h1>
+    <section class="col-12 text-center myFont3 p-3">
+      <h1>Portfolio</h1>
+      <a href="https://github.com/ricou12?tab=repositories">
+        <h4>Lien vers Github</h4>
+      </a>
     </section>
-    
-    <!-- WEB STATIQUE -->
-    <section class="web-static col-12 col-md-6 border shadow-lg p-5 ">
-      <aside class="web-static__title alert alert-secondary text-center mb-5 shadow-lg" role="alert">
-        <h3 class="mb-4">Web statique</h3>
-        <p class="mb-5">Liens vers Github...</p>
+    <!-- FRONT END -->
+    <section class="front-end col-12 col-md-6 p-3 ">
+      <aside class="front-end__title alert alert-secondary shadow-lg" role="alert">
+        <h3 class="mb-4">Front-end</h3>
+        <p>Ensemble des technologies dites statique et dynamique, il s'agit des éléments du site que l'on
+          voit à l'écran et avec lesquels on peut interagir. Ces éléments sont composés de HTML, CSS et de Javascript
+          contrôlés par le navigateur web de l'utilisateur.</p>
+        <p>
+          Technologie dite statique:
+          - HTML, CSS, framework Bootstrap ...
+          - JAVASCRIPT, framework Jquery ...
+        </p>
       </aside>
-      <aside>
-        {%- if site.web-static.size > 0 -%}
-        {% assign wStatic = site.web-static  | sort: 'identifiant' %}
-        {% for w in wStatic %}
-        {{ w.content }}
-        {% endfor %}
+    </section>
+    <!-- BACK END -->
+    <section class="back-end col-12 col-md-6 p-3">
+      <aside class="back-end__title alert alert-secondary shadow-lg" role="alert">
+        <h3 class="mb-4">Back-end</h3>
+        <p>C'est la partie invisible pour les visiteurs mais représente une grande partie du développement d'un projet
+          web. Sans elle, le site web reste une coquille vide.</p>
+        <p>On peut le décomposer en trois parties essentielles : <br>
+          - Un serveur (ou hébergement web)<br>
+          - Une application (en l’occurrence le site web)<br>
+          - Une base de données (ou l'on stocke les données de l'application)<br>
+        </p>
+      </aside>
+    </section>
+    <section class="back-end col-12 d-flex flex-row justify-content-between flex-wrap">
+      <!-- <aside> -->
+        {%- if site.frontEnd.size > 0 -%}
+        {% assign wStatic = site.frontEnd  | sort: 'identifiant' %}
+          {% for w in wStatic %}
+            <div class="carte">
+              <img class="carte__image" src="{{w.image|relative_url}}" alt="">
+              <div class="carte__info">
+                <h3 class="carte__info__title"> {{ w.titre}}</h3>
+                <p class="carte__info__comment">{{w.text}}</p>
+                <div class="carte__info__link">
+                  <a class="carte__info__text__link-1" href="{{w.linkPage | relative_url}}">Voir le site web</a>
+                  <a class="carte__info__text__link-2" href="{{w.linkDownload | relative_url}}">Lien vers Github</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
         {%- endif -%}
-      </aside>
-    </section>
-    <!-- WEB DYNAMIQUE -->
-    <!-- PictureBox  html css et javascript -->
-    <section class="col-12 col-md-6 border shadow-lg p-5">
-      <aside class="alert alert-secondary text-center mb-5 shadow-lg" role="alert">
-        <h3 class="mb-4">Web dynamique</h3>
-        <p class="mb-5">Premiers pas en Javascript.</p>
-      </aside>
-      <aside>
-        {%- if site.web-dynamic.size > 0 -%}
-        {% assign wdynamic = site.web-dynamic  | sort: 'identifiant' %}
-        {%- for wdyn in wdynamic -%}
-        {{ wdyn.content }}
-        {%- endfor -%}
+      <!-- </aside>
+      <aside> -->
+        {%- if site.backEnd.size > 0 -%}
+        {% assign wStatic = site.backEnd  | sort: 'identifiant' %}
+          {% for w in wStatic %}
+          <div class="carte">
+              <img class="carte__image" src="{{ w.image | relative_url }}" alt="">
+              <div class="carte__info">
+                <h3 class="carte__info__title"> {{ w.titre}}</h3>
+                <p class="carte__info__comment">{{w.text}}</p>
+                <div class="carte__info__link">
+                  <a class="carte__info__text__link-1" href="{{w.linkPage | relative_url}}">Voir le site web</a>
+                  <a class="carte__info__text__link-2" href="{{w.linkDownload | relative_url}}">Code source</a>
+                </div>
+              </div>
+            </div>
+            <p>{{w.text}}</p>
+          {% endfor %}
         {%- endif -%}
-      </aside>
+      <!-- </aside> -->
     </section>
-
-  </article>
-
+    </article>
 </main>
