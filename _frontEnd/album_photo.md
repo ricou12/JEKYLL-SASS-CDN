@@ -1,6 +1,6 @@
 ---
 layout : portfolio
-titre: Album photo
+titre: Album photos
 image: "./images/portfolio/album.png"
 linkPage: "https://ricou12.github.io/AlbumPhoto_html-css/"
 linkDownload: "https://github.com/ricou12/AlbumPhoto_html-css/"
