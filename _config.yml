@@ -14,7 +14,7 @@ collections:
     output: true
   frontEnd:
     output: true
-  back-end:
+  backEnd:
     output: true
   tuto:
     output: true

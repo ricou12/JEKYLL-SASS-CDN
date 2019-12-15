@@ -5,6 +5,6 @@ number: 7
 theme: front
 pathImg: /images/cards/js.png
 title: Javascript
-comment: Apprendre à coder en Javascript
+comment: Quelque notions.
 link: /templates/javascript.html
 ---
