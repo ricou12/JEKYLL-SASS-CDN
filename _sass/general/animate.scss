@@ -33,7 +33,6 @@ h1 {
 
 @mixin translateXToRight{
   animation-name: toRight;
-  // animation-delay: 1s;
   animation-duration: 1s;
   animation-direction: normal;
 }
@@ -55,7 +54,16 @@ h1 {
   }
 }
 
-
+@mixin translateYToDown{
+  animation-name: toDown;
+  animation-duration: 1s;
+  animation-direction: normal;
+}
+@keyframes toDown {
+  from {
+    transform: translatey(100vw);
+  }
+}
 
 .fly {
   border: 1px solid;

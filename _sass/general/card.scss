@@ -1,3 +1,6 @@
+/* ------------------------------------------------
+                      CARD BOOT
+ ------------------------------------------------ */
 .card {
     overflow:hidden;
   position: relative;
@@ -43,11 +46,17 @@
     z-index: 10;
   }
 }
+
+/* ------------------------------------------------
+                      PAGE CONTACT
+ ------------------------------------------------ */
 .mycard{
     padding:1em;
     background-color: rgb(52, 52, 51);
     color:white;
     border-radius: 5px;
+    transition:1s;
+    @include translateXToRight;
     img{
         border-radius: 7px;
         max-width: 250px;
@@ -55,4 +64,8 @@
     &-body{
         padding:1em;
     }
+}
+.cvText{
+  transition:1s;
+  @include translateYToDown;
 }
