@@ -2,9 +2,23 @@
                       CARD BOOT
  ------------------------------------------------ */
 .card {
-    overflow:hidden;
-  position: relative;
+  overflow: hidden;
   border-radius: 7px;
+
+  &__container-img {
+    position: relative;
+
+    &__fond {
+      position: absolute;
+      z-index: 1;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 0;
+      border-radius: 7px;
+      transition: 0.5s;
+    }
+  }
 
   img {
     border-radius: 7px 7px 0 0;
@@ -17,28 +31,22 @@
     color: white;
     border-radius: 0 0 7px 7px;
     margin-top: 2px;
-    transition:0.5s;
-  }
-
-  &__fond {
-    position: absolute;
-    z-index: 1;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 0;
-    border-radius: 7px;
-    transition: 1s;
+    transition: 0.2s;
   }
 
   &:hover {
-    .card-body{
-        transform:translateY(5px);
+
+    .card-body {
+      transform: translateY(5px);
     }
-    .card__fond {
-    background-color: rgba(255, 255, 255, 0.5);
-    height: 100%;
+
+    .card__container-img__fond {
+      opacity: 0.5;
+      background-color: rgb(255, 1, 1);
+      //  @include color-grad-red;
+      height: 100%;
     }
+
   }
 
   a {
@@ -50,22 +58,25 @@
 /* ------------------------------------------------
                       PAGE CONTACT
  ------------------------------------------------ */
-.mycard{
-    padding:1em;
-    background-color: rgb(52, 52, 51);
-    color:white;
-    border-radius: 5px;
-    transition:1s;
-    @include translateXToRight;
-    img{
-        border-radius: 7px;
-        max-width: 250px;
-    }
-    &-body{
-        padding:1em;
-    }
+.mycard {
+  padding: 1em;
+  background-color: rgb(52, 52, 51);
+  color: white;
+  border-radius: 5px;
+  transition: 1s;
+  @include translateXToRight;
+
+  img {
+    border-radius: 7px;
+    max-width: 250px;
+  }
+
+  &-body {
+    padding: 1em;
+  }
 }
-.cvText{
-  transition:1s;
+
+.cvText {
+  transition: 1s;
   @include translateYToDown;
 }

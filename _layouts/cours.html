@@ -39,9 +39,11 @@ layout: default
           {% for tuto in orderItem %}
           <section class="col-12 col-sm-6">
             <div class="card shadow m-2" style="min-height:350px;">
-              <div class="card__fond"></div>
-              <!-- Récupère la propriété pathImg -->
-              <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
+              <div class="card__container-img">
+                <div class="card__container-img__fond"></div>
+                <!-- Récupère la propriété pathImg -->
+                <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
+              </div>
               <div class="card-body d-flex flex-column justify-content-between">
                 <!-- Récupère le titre -->
                 <h3 class="card-title">{{tuto.title}}</h3>
@@ -51,12 +53,12 @@ layout: default
                   <!-- Affiche le lien -->
                   <!-- Affiche le lien -->
                   {% if tuto.link %}
-                    <a href="{{ tuto.link | relative_url }}" class="btn btn-primary">
+                  <a href="{{ tuto.link | relative_url }}" class="btn btn-primary">
                     Accèder au cours
-                  {% else  %}
+                    {% else  %}
                     <a href="#" class="btn btn-secondary disabled">
-                    cours à venir
-                  {% endif  %}
+                      cours à venir
+                      {% endif  %}
                     </a>
                 </div>
               </div>
@@ -81,9 +83,11 @@ layout: default
           {% for tuto in orderItem %}
           <section class="col-12 col-sm-6">
             <div class="card shadow m-2" style="min-height:350px;">
-              <div class="card__fond"></div>
-              <!-- Récupère la propriété pathImg -->
-              <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
+              <div class="card__container-img">
+                <div class="card__container-img__fond"></div>
+                <!-- Récupère la propriété pathImg -->
+                <img src="{{ tuto.pathImg | relative_url }}" class="card-img-top" alt="{{tuto.pathImg}}">
+              </div>
               <div class="card-body  d-flex flex-column justify-content-between">
                 <!-- Récupère le titre -->
                 <h3 class="card-title">{{tuto.title}}</h3>
@@ -111,62 +115,65 @@ layout: default
   </article>
 </main>
 
-  <!-- Export site data for search -->
-  <script type="application/javascript">
-    const $inputSearch = document.getElementById("input-search");
-    const $resultContainer = document.getElementById('return-result');
+<!-- Export site data for search -->
+<script type="application/javascript">
+  const $inputSearch = document.getElementById("input-search");
+  const $resultContainer = document.getElementById('return-result');
 
-    const tutos = [
-      {%- for tuto in site.tuto -%}
-       {
-        title: "{{ tuto.title }}",
-        url: "{{ tuto.link }}",
-        commentaire: "{{ tuto.comment }}"
-      },
-      {%- endfor -%}
-     ];
-
-    // console.log(tutos);
-
-    // Filtre le tableau de données et ne retourne que les éléments d'intérêt
-    function search(word) {
-      return tutos.filter(tuto => {
-        return strContains(tuto.title, word, tuto.url);
-      })
+  const tutos = [{
+      % -
+      for tuto in site.tuto - %
+    } {
+      title: "{{ tuto.title }}",
+      url: "{{ tuto.link }}",
+      commentaire: "{{ tuto.comment }}"
+    },
+    {
+      % -endfor - %
     }
-    // const searchResults = search("J");
-    // console.log(searchResults);
+  ];
 
-    // True si string contients word
-    function strContains(string, word, url) {
-      // Limite la cass
-      string = string.toLowerCase();
-      word = word.toLowerCase();
-      console.log("Chaines converties en minuscules : " + string + "   " + word);
-      // Ne retourne que les cours dont url pointe vers un url.
-      if (url) {
-        return string.indexOf(word) > -1;
-      }
+  // console.log(tutos);
+
+  // Filtre le tableau de données et ne retourne que les éléments d'intérêt
+  function search(word) {
+    return tutos.filter(tuto => {
+      return strContains(tuto.title, word, tuto.url);
+    })
+  }
+  // const searchResults = search("J");
+  // console.log(searchResults);
+
+  // True si string contients word
+  function strContains(string, word, url) {
+    // Limite la cass
+    string = string.toLowerCase();
+    word = word.toLowerCase();
+    console.log("Chaines converties en minuscules : " + string + "   " + word);
+    // Ne retourne que les cours dont url pointe vers un url.
+    if (url) {
+      return string.indexOf(word) > -1;
     }
+  }
 
-    function userSearch(word) {
-      const searchResults = search(word) || [];
-      let html = "";
-      searchResults.forEach(function (result) {
+  function userSearch(word) {
+    const searchResults = search(word) || [];
+    let html = "";
+    searchResults.forEach(function (result) {
 
-        html += `
+      html += `
         <a class="btn btn-success mb-1" href="{{ site.baseurl }}${result.url}">${result.title}</a>
       `;
-      });
-      html =
-        `<div class="row"><div class="col-12 mt-1 bg-dark border border-dark p-2 shadow-lg text-white"><h6>Resultat de ma recherhe</h6>${html}</div></div>`
-      $resultContainer.innerHTML = html;
-    }
-    //  userSearch('J');
+    });
+    html =
+      `<div class="row"><div class="col-12 mt-1 bg-dark border border-dark p-2 shadow-lg text-white"><h6>Resultat de ma recherhe</h6>${html}</div></div>`
+    $resultContainer.innerHTML = html;
+  }
+  //  userSearch('J');
 
-    function mySearch() {
-      const maRecherche = $inputSearch.value;
-      userSearch(maRecherche);
-    }
+  function mySearch() {
+    const maRecherche = $inputSearch.value;
+    userSearch(maRecherche);
+  }
 
-  </script>
+</script>

@@ -5,7 +5,7 @@
   background: rgb(0, 18, 254);
   background: -moz-linear-gradient(top, rgba(0, 18, 254, 1) 0%, rgba(0, 73, 254, 1) 10%, rgba(0, 73, 254, 0.3) 50%, rgba(0, 73, 254, 1) 90%, rgba(0, 18, 254, 1) 100%);
   background: -webkit-linear-gradient(top, rgba(0, 18, 254, 1) 0%, rgba(0, 73, 254, 1) 10%, rgba(0, 73, 254, 0.3) 50%, rgba(0, 73, 254, 1) 90%, rgba(0, 18, 254, 1) 100%);
-  background: linear-gradient(to bottom, rgba(0, 18, 254, 1) 0%, rgba(0, 73, 254, 1) 10%, rgba(0, 73, 254, 0.3) 50%, rgba(0, 73, 254, 1) 90%, rgba(0, 18, 254, 1) 100%);
+  background: linear-gradient(to bottom, #0012fe 0%, rgba(0, 73, 254, 1) 10%, rgba(0, 73, 254, 0.3) 50%, rgba(0, 73, 254, 1) 90%, rgba(0, 18, 254, 1) 100%);
 }
 
 @mixin color-grad-gray {

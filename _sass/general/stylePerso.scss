@@ -41,6 +41,11 @@
   }
 }
 
+h1 {
+  @include opacityAndMove;
+}
+
+
 .front-end {
   overflow: hidden;
 
@@ -59,7 +64,6 @@
 
 .bold {
   font-weight: bold;
-
 }
 
 .JekyllColor {
