@@ -1,4 +1,4 @@
 ---
-layout: cli
+layout: coursWeb/cli
 title: Commande Line Interface
 ---

@@ -6,5 +6,5 @@ theme: front
 pathImg: /images/cards/jekyll.png
 title: Jekyll
 comment: Un générateur de site statique
-link: /templates/jekyll.html
+link: /templates/coursWeb/jekyll.html
 ---
