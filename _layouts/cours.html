@@ -120,17 +120,14 @@ layout: default
   const $inputSearch = document.getElementById("input-search");
   const $resultContainer = document.getElementById('return-result');
 
-  const tutos = [{
-      % -
-      for tuto in site.tuto - %
-    } {
+  const tutos = [
+    {%- for tuto in site.tuto -%}
+     {
       title: "{{ tuto.title }}",
       url: "{{ tuto.link }}",
       commentaire: "{{ tuto.comment }}"
     },
-    {
-      % -endfor - %
-    }
+    {%- endfor -%}
   ];
 
   // console.log(tutos);
