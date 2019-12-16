@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<article class="container">
+<article class="container myFont3">
   <section class="row">
-    <aside class="col-12 text-center">
+    <aside class="col-12 text-center ">
       <h1>Jekyll</h1>
     </aside>
   </section>
@@ -26,7 +26,8 @@ layout: default
         <li>Avec une console (Bash, Shell ...)</li>
       </ul>
       <h3>Installation</h3>
-      <p class="bold"> gem install bundler jekyll</p>
+      <p><span  class="bold">Jekyll est écrit en Ruby : </span><a href="https://rubyinstaller.org/">Installer windows</a></p>
+      <p ><span class="bold"> gem install bundler jekyll</span> : Installe Jekyll</p>
       <p><span class="bold"> jekyll new mon-site-web</span> : Pour créer un nouveau projet</p>
       <p><span class="bold"> cd mon-site-web</span> : Pour se placer dans le repertoire du projet.</p>
       <p><span class="bold">bundle exec jekyll serve</span> : Install et execute le server. </p>
@@ -34,9 +35,10 @@ layout: default
 
       <h3>Fonctionalités</h3>
       <h4>Les dossiers du projet</h4>
+      <p  class="bold">sans underscores "_" seront générer en l'état dans le dossier site, avec  "_" servent lors de la compilation.</p> 
       <ul>
-        <li>Un dossier <span class="bold">assets</span> dans la racine du projet, créer des sous-dossiers pour le css,
-          images ...</li>
+        <li><span class="bold">assets</span> dans la racine du projet, créer des sous-dossiers assets pour stocker vos dépendances les fichiers CSS,
+          JS, vos images...</li>
         <li><span class="bold">_includes</span> : morceaux de codes liés à une page html </li>
         <li><span class="bold">_layouts</span> : pages md ou html principale et autre bloc de code integrant les
           includes et traitement de données
@@ -47,14 +49,17 @@ layout: default
         </li>
       </ul>
       <h4><a href="{{"/templates/sass.html"|relative_url}}">SASS</a></h4>
-      <p>Jekyll génére autant de fichiers css à partir de scss du moment ou ils contiennent un front matter.</p>
+      <p>Jekyll embarque SASS.<br> Jekyll génére automatiquement les fichiers css à partir de vos fichiers scss.</p>
       <p>Vou pouvez éditer plusieurs fichiers scss dans le dossier "_sass" pour alléger le code, le rendre plus clair,
         accessible à la lecture et séparer les fonctionalités. <br> Pour cela éditez un fichier scss dans le dossier
-        assets par exemple <br> Importer toutes les dépendances que vous avez edité dans le dossier _sass. </p>
+        assets par exemple <br> Importer toutes les dépendances que vous avez edité dans le dossier _sass.</p>
+      <p> Préférer par usage de créér un fichier principal scss dans le dossier assets (ex: assets/css/main.scss) dans lequel figure tout les imports *.scss lié à votre projet. Ce fichier devra contenir un <span class="bold">Front Matter</span> en-tete necessaire pour la génération du fichier css final.</p>
+      
       <pre>
                ---
                # front matter
                ---
+               // assets/css/main.scss
                @import "./style1.scss";
                @import "./style2.scss";
                etc ...

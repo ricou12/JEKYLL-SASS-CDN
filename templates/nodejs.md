@@ -1,7 +1,9 @@
 ---
-layout: nodejs
+layout: mdForme
 title: Node JS
 ---
+# <center>Node js</center>
+
 Inspiré des cours OPENCLASSROOMS
 
 Node.js utilise le langage JavaScript (basé sur les évènements), il offre un environnement côté serveur en dehors du navigateur !

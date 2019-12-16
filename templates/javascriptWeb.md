@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: mdForme
 title: Javascript pour le web
 ---
 

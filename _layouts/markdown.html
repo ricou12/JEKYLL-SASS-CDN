@@ -2,55 +2,55 @@
 layout: default
 ---
 <article class="container myFont3">
-  <section class="row">
-    <div class="col-12 text-center mt-1 mb-5 bg-secondary text-white p-2">
+  <section class="row ">
+    <div class="col-12 text-center mt-1 mb-5 p-2">
       <h1>MarkDown</h1>
     </div>
   </section>
 
   <section class="row">
 
-    <div class="col-12 shadow border bg-primary text-white">
+    <div class="col-12 shadow border border-secondary text-primary">
       <br>
       <h3>Les titres:</h3>
       <div class="row">
         <div class="col-12 col-md-6">
-          <pre>
-    # Titre de niveau 1
-    ## Titre de niveau 2
-    ### Titre de niveau 3
-    #### Titre de niveau 4
-    ##### Titre de niveau 5
-    ###### Titre de niveau 6</pre>
+          <p> # Titre de niveau 1</p>
+          <p>## Titre de niveau 2</p>
+          <p>### Titre de niveau 3</p>
+          <p> #### Titre de niveau 4</p>
+          <p>##### Titre de niveau 5</p>
+          <p>###### Titre de niveau 6</p>
         </div>
         <div class="col-12 col-md-6">
-          <h1>Titre de niveau 1</h1>
-          <h2>Titre de niveau 2</h2>
-          <h3>Titre de niveau 3</h3>
-          <h4>Titre de niveau 4</h4>
-          <h5>Titre de niveau 5</h5>
-          <h6>Titre de niveau 6</h6>
+          <h1>Niveau 1</h1>
+          <h2>Niveau 2</h2>
+          <h3>Niveau 3</h3>
+          <h4>Niveau 4</h4>
+          <h5>Niveau 5</h5>
+          <h6>Niveau 6</h6>
         </div>
       </div>
     </div>
-    <div class="col-12 shadow border bg-info text-white">
+    <div class="col-12 shadow border bg-danger text-white">
       <br>
       <h3>Les textes gras, italiques et barrés</h3>
-      <pre>
-    *Ceci est un texte italique*
-    **Ceci est un texte gras** 
-    ~~Ceci est un texte barré~~
-    **Il est possible de les *combiner* comme ceci** ou *encore comme **ceci***</pre>
-    </div>
-    <div class="col-12 shadow border bg-success text-white">
-        <br>
-        <h3>Les blocs</h3>
-        <pre>
+    <p>
+      *Ceci est un texte italique* <br>
+    **Ceci est un texte gras**  <br>
+    ~~Ceci est un texte barré~~ <br>
+    **Il est possible de les *combiner* comme ceci** ou *encore comme **ceci***
+    </p>
+        </div>
+    <div class="col-12 shadow border border-secondary text-primary">
+      <br>
+      <h3>Les blocs</h3>
+      <pre class="text-primary">
           ~~~html  
           &lt;a&gt;ceci est un bloc avec du code html  &lt;/a&gt; 
           ~~~ 
-        </pre> 
-        <pre>
+        </pre>
+      <pre  class="text-primary">
           ```  
           var x = 1;
           if (true) {
@@ -59,7 +59,7 @@ layout: default
           
           console.log(x);
           ```
-          </pre> 
+          </pre>
     </div>
     <div class="col-12 shadow border bg-success text-white">
       <br>
@@ -71,9 +71,9 @@ layout: default
       </pre>
     </div>
 
-    <div class="col-12 shadow border bg-secondary text-white">
+    <div class="col-12 shadow border border-secondary text-primary">
       <h3>Les listes</h3>
-      <pre>
+      <pre  class="text-primary">
     Liste simple :
     * Élément 1
     * Élément 3
@@ -81,7 +81,7 @@ layout: default
     * Sous élément 2
     * Élément 2
     </pre>
-      <pre>
+      <pre  class="text-primary">
     Liste ordonnée :
     1. Élément 1
     2. Élément 2
@@ -89,7 +89,7 @@ layout: default
     2. Sous élément 2
     3. Élément 3
     </pre>
-    <pre>
+    <pre  class="text-primary">
     Listes simples et ordonnées imbriquées :
     1. Élément 1
     * Sous-élément 1
@@ -99,7 +99,7 @@ layout: default
     </pre>
     </div>
 
-    <div class="col-12 shadow border bg-primary text-white">
+    <div class="col-12 shadow border bg-info text-white">
       <h3>Checklist / Liste de cases à cocher </h3>
       <pre>
     - [x] Élément 1, coché
@@ -110,9 +110,9 @@ layout: default
         </pre>
     </div>
 
-    <div class="col-12 shadow border bg-info text-white">
+    <div class="col-12 shadow border border-secondary text-primary">
       <h3>Liste de définitions</h3>
-      <pre>
+      <pre  class="text-primary">
     Terme 1
     : Définition 1.1
     Terme 2
@@ -121,9 +121,9 @@ layout: default
     </pre>
     </div>
 
-    <div class="col-12 shadow border bg-success text-white">
+    <div class="col-12 shadow border bg-danger text-white">
       <h3>Échapper les caractères spéciaux</h3>
-      <pre>
+      <pre class="text-white">
     \\ : Anti-slash
     \` : Apostrophe curve
     \* : Asterisk
@@ -139,14 +139,14 @@ layout: default
     </pre>
     </div>
 
-    <div class="col-12 shadow border bg-secondary text-white">
+    <div class="col-12 shadow border border-secondary text-primary">
       <h3>Les images</h3>
-      <pre class="border bg-primary text-white">
+      <pre class="text-primary">
     ![Texte alternatif](https://github.com/ricou12/Jekyll-scss/blob/master/_images/moorea/3.jpg)
     </pre>
     </div>
 
-    <div class="col-12 shadow border bg-primary text-white">
+    <div class="col-12 shadow border bg-success text-white">
       <h3>Les citations</h3>
       <pre>
     > Ceci est une citation
@@ -154,14 +154,14 @@ layout: default
     </pre>
     </div>
 
-    <div class="col-12 shadow border bg-info text-white">
+    <div class="col-12 shadow border border-secondary text-primary">
       <h3>Les séparateurs / Lignes horizontal </h3>
-      <pre>
+      <pre class="text-primary">
     ***
     </pre>
     </div>
 
-    <div class="col-12 shadow border bg-success text-white">
+    <div class="col-12 shadow border bg-info text-white">
       <h3>Les tableaux Sans alignement</h3>
       <pre>
     Titre colonne 1 | Titre colonne 1 | Titre colonne 1
@@ -171,9 +171,9 @@ layout: default
     </pre>
     </div>
 
-    <div class="col-12 shadow border bg-secondary text-white">
+    <div class="col-12 shadow border border-secondary text-primary">
       <h3>Les tableaux Avec alignement</h3>
-      <pre>
+      <pre class="text-primary">
     Titre colonne 1 (droite) | Titre colonne 1 (centré) | Titre colonne 1 (gauche)
     ---: | :---: | :---
     Celule 1.1 | Celule 1.2 | Celule 1.3
