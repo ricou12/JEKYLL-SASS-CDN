@@ -29,9 +29,7 @@ layout : default
         </li>
         <li> Créer un <span class="bold">dossier pour le projet</span>, puis l'ouvrir dans l'éditeur.</li>
         <li><span class="bold">Initialiser le projet</span>, créer un fichier "package.json".
-          <p>
-            <pre>npm init -y</pre> L'option "-y" permet de reporter la phase de configuration du fichier package.json.
-          </p>
+         <pre class="bold text-danger">npm init -y</pre> L'option "-y" permet de reporter la phase de configuration du fichier package.json.
           <div class="row">
             <div class="col-12 d-flex justify-content-center">
               <img class=" shadow-lg" src="{{"./images/contact/package.png" | relative_url}}" alt="package.json">
@@ -57,9 +55,9 @@ layout : default
           </ul>
         </li>
         <li><span class="bold">Installer node-sass</span> pour compiler les fichiers scss au format css.
-          <p>En effet les navigateurs sont incapables d'interprêter ce type fichier.
-            <pre>npm install node-sass --save-dev</pre>
-          </p>
+          En effet les navigateurs sont incapables d'interprêter ce type fichier.
+            <pre class="bold text-danger">npm install node-sass --save-dev</pre>
+          
           <p>L'option: "--save-dev" ou plus simplement "-D" ajoute une dépendance au fichier "package.json" dite
             dev-time, exécutée pendant la phase de développement. </p>
           <p>L'option: "--save" ou plus simplement "-s" crée une dépendance au fichier "package.json" dite runtime (en
@@ -67,22 +65,36 @@ layout : default
           </p>
         </li>
         <li><span class="bold">Automatiser la compilation</span>.
-          <p>Ajouter à la section script du fichier package.json
-            <pre>"compile-sass": "node-sass sass/main.scss css/style.css --watch"</pre>
-          </p>
+          Ajouter à la section script du fichier package.json
+            <pre class="bold text-danger">"compile-sass": "node-sass sass/main.scss css/main.css --watch"</pre>
         </li>
-        <li>Définir le dossier cible pour la génération du css, ne pas oublier d'ajouter le lien du css dans la balise
+        <li><span class="bold">Définir le dossier cible pour la génération du css</span>, ne pas oublier d'ajouter le lien du css dans la balise
           &lt; head &gt;.
-          <pre>&lt; link rel="stylesheet" type="text/css" href="css/style.css" /&gt;</pre>
+          <pre>&lt;link rel="stylesheet" type="text/css" href="css/main.css"/&gt;</pre>
         </li>
-        <li><span class="bold"></span>Démarrer la compilation en mode auto si renseigné dans le "package.json" (générer
+        <li><span class="bold">Démarrer la compilation en mode auto</span> si renseigné dans le "package.json" (générer
           le fichier css à partir du scss).
-          <pre>npm run compile-sass</pre>
+          <pre class="bold text-danger">npm run compile-sass</pre>
           <p></p>
         </li>
-      </ul>
-
-      <br>
+        <li><span class="bold">Intégrer une version de Bootstrap avec ses dépendances dans son projet.</span>
+          <ul>
+            <li><span class="bold">Avec le CDN</span>
+              <ul>
+                <ul>
+                  <li>bootstrap.min.css (Dans la balise &lt; head &gt;).</li>
+                  <li>bootrap.min.js (dans la balise &lt; script &gt; avant &lt; body &gt;)</li>
+                  <li>popper.js (idem)</li>
+                  <li>jquery.js (idem)</li>
+                </ul>
+              </ul>
+            </li>
+            <li>
+              <span class="bold">Importer à partir des dépendances de node_modules</span>, les fichiers scss de Bootstrap. <br>
+              Ouvrir node_modules/bootstrap/scss le fichier bootstrap.scss qui s'y trouve doit être importé dans notre fichier main.scss  en premier ligne afin que les règles de bootstrap prime sur nos propes règles.
+            </li>
+          </ul>
+      <br>  
       <h2>Installation globale</h2>
       <ul>
         <li>Installer Ruby</li>
