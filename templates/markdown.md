@@ -1,4 +1,0 @@
----
-layout: markdown
-title: Markdown
----

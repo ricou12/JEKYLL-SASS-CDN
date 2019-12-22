@@ -6,5 +6,5 @@ number: 1
 pathImg: /images/cards/html-css.png
 title: HTML et CSS
 comment: Apprendre à coder en HTML et CSS
-link: /templates/htmlCss.html
+link: /templates/coursWeb/htmlCss.html
 ---

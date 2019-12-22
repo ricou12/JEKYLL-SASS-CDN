@@ -5,5 +5,5 @@ number: 5
 pathImg: /images/cards/cli.png
 title: CLI
 comment: Apprendre à utiliser un terminal
-link: /templates/cli.html
+link: /templates/coursWeb/cli.html
 ---

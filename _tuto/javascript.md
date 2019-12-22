@@ -6,5 +6,5 @@ theme: front
 pathImg: /images/cards/js.png
 title: Javascript
 comment: Quelque notions.
-link: /templates/javascript.html
+link: /templates/coursWeb/javascript.html
 ---

@@ -1,4 +1,0 @@
----
-layout: jekyll
-title: Jekyll
----
