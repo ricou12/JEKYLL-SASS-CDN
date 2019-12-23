@@ -1,5 +1,5 @@
 ---
-layout: mdForme
+layout: coursWeb/mdForme
 title: Javascript pour le web
 ---
 

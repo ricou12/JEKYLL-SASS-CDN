@@ -6,5 +6,5 @@ theme: front
 pathImg: /images/cards/sass.png
 title: SASS
 comment: Utiliser un préprocesseur Css
-link: /templates/sass.html
+link: /templates/coursWeb/sass.html
 ---

@@ -1,4 +1,0 @@
----
-layout: sass
-title : SASS
----
