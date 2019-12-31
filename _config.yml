@@ -19,6 +19,7 @@ collections:
   tuto:
     output: true
 
+
 # Définit le(s) dossier(s) pour l'acces au fichier sass (scss).
 sass:
   load_paths:

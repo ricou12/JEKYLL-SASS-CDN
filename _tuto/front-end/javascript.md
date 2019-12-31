@@ -1,7 +1,7 @@
 ---
 layout: cours
 type: frontEnd
-number: 7
+number: 6
 theme: front
 pathImg: /images/cards/js.png
 title: Javascript

@@ -1,0 +1,264 @@
+---
+layout: default
+---
+<article class="container myFont3">
+  <section class="row">
+    <aside class="col-12 text-center">
+      <h1>Angular</h1>
+    </aside>
+  </section>
+  <section class="row">
+    <aside class="col-12">
+      <h2>Installation</h2>
+      <ul>
+        <li>Vérifier si nodeJs est installé sur le pc via un terminal : <span class="bold">node –v</span>
+          <br> Si besoin l’installer <span class="bold"> https://nodejs.org/en/download/</span></li>
+        <li>Installer NPM (Node Package Manager) : <span class="bold">npm install -g npm@latest</span>
+          <br> Dernière version du gestionnaire de paquets.
+        </li>
+        <li>Installer le cli d’Angular : <span class="bold"> npm install -g @angular/cli</span></li>
+        <li>Créer son premier projet : <span class="bold">ng new mon-projet</span>
+          <br> Pour utiliser un prépocesseur css : <span class="bold">Ng new mon-projet --style=scss</span>
+          <br> Sans fichiers de test unitaires : <span class="bold">Ng new mon-projet --style=scss
+            --skip-tests=true</span>
+
+        </li>
+        <li>Installer bootstrap : <span class="bold">npm install bootstrap@3.3.7 --save</span>
+          <br> ---save pour l’ajouter au package.json du projet.
+          <br> Ouvrez le fichier <span class="bold">angular.json </span> du dossier source de votre projet.
+          <br> Dans <span class="bold">"architect/build/options"</span>, modifiez l’array <span
+            class="bold">styles</span> comme suit :
+          <p class="bold code">
+            "styles": [ <br>
+            "./node_modules/bootstrap/dist/css/bootstrap.css", <br>
+            "src/styles.scss" <br>
+            ]
+          </p>
+        </li>
+        <li>npm txjs-compact --save</li>
+        <li>Lancer le server de développement : <span class="bold">ng serve --open</span> ou <span class="bold">ng
+            serve</span></li>
+
+      </ul>
+    </aside>
+    <aside class="col-12">
+      <h2>Créer un nouveau composant</h2>
+      <ul>
+        <li class="bold">ng generate component new-component</li>
+        <li class="bold">ng g c new-component</li>
+      </ul>
+    </aside>
+    <aside class="col-12">
+      <h2 class="bold">Gérer les données</h2>
+      <p>C’est la communication entre votre code TypeScript et le Template.
+        <ul>
+          <li>Du code --> navigateur = <span class="bold">"string interpolation"</span> et le <span
+              class="bold">"property binding"</span> </li>
+          <li>Du Template --> code = <span class="bold">"event binding"</span></li>
+        </ul>
+      </p>
+      <p>Syntaxe pour l'interpolation : les doubles accolades &#123;&#123; &#160;&#160; &#125;&#125;
+        <br> Déclare les variables et méthodes dans le fichier new-component.ts (typeScript)
+        <br> Récupéré et affiche le contenu de variables dans le Template html.
+      </p>
+      <h3 class="bold">string interpolation : &#123;&#123; &#160;&#160; &#125;&#125; </h3>
+      <pre class="code">
+    <span class="bold">// composant html </span>
+    &lt;li class=&quot;list-group-item&quot;&gt;
+    &nbsp; &lt;h4&gt;Appareil :<span class="bold"> &#123;&#123; appareilName &#125;&#125; </span>-- Statut :<span
+        class="bold"> &#123;&#123; getStatus() &#125;&#125;</span> &lt;/h4&gt;
+    &lt;/li&gt;
+      </pre>
+      <hr>
+      <pre class="code">
+    <span class="bold">// composant .ts</span>
+    import { Component, OnInit } from '@angular/core';
+
+    <span class="bold">// Composant</span>
+    @Component({
+        selector: 'app-appareil',<span class="bold">// le nom de la balise à insérer dans le Template html</span>
+        templateUrl: './appareil.component.html',<span class="bold">// html</span>
+        styleUrls: ['./appareil.component.scss'] <span class="bold">// Feuille de style scss</span>
+    })
+    <span class="bold">// classe</span>
+    export class AppareilComponent implements OnInit {
+
+        <span class="bold">// variables</span>
+        appareilName: string = 'Machine à laver';
+        appareilStatus: string = 'éteint';
+
+        <span class="bold">// Constructeur</span>
+        constructor() { }
+        ngOnInit() {
+        }
+        <span class="bold">// Méthodes</span>
+        getStatus() {
+            return this.appareilStatus;
+        }
+    }
+      </pre>
+      <h3 class="bold">property binding : [ ]</h3 class="bold">
+      <p>Modifier dynamiquement les propriétés d'un élément du DOM en fonction de données dans votre TypeScript.
+        <br>Lie la propriété d’un élément html au TypeScript, mettre la propriété entre [ ] et l'associer à la variable.
+      </p>
+      <p>&lt;button class=&quot;btn btn-success&quot; [disabled]=&quot;isAuth&quot;&gt;Tout allume&lt;/button&gt;</p>
+      <h3 class="bold">event binding : ( )</h3 class="bold">
+      <p>Réagir dans votre code TypeScript aux événements venant du Template HTML.
+        <br>Utiliser les () pour créer une liaison à un événement.
+      </p>
+      <pre>
+    // composant html
+    &lt;button class=&quot;btn btn-success&quot;[disabled]=&quot;!isAuth&quot;(click)=&quot;onAllumer()&quot;&gt;Tout allumer&lt;/button&gt;&lt;/div&gt;
+    </pre>
+      <hr>
+      <pre>
+    // composant ts
+        … 
+    // Méthode
+    onAllumer() {
+        console.log('On allume tout !');
+    }
+        </pre>
+      <h3 class="bold">two-way binding : [ ( ) ]</h3>
+      <p>Utilise la liaison par propriété et la liaison par événement en même temps. <br>
+        Pour les formulaires, afin de pouvoir déclarer et de récupérer le contenu des champs, entre autres. <br>
+        Importer FormsModule depuis @angular/forms dans votre application. Vous pouvez accomplir cela en l'ajoutant à
+        l’array imports de votre AppModule (sans oublier d'ajouter le statement import correspondant en haut du
+        fichier).
+      </p>
+      <hr>
+    <pre class="code">
+    <span class="bold">// app.module.ts</span>
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
+    
+    import { AppComponent } from './app.component';
+    import { MonPremierComponent } from './mon-premier/mon-premier.component';
+    import { AppareilComponent } from './appareil/appareil.component';
+    <span class="bold">import { FormsModule } from '@angular/forms';</span>
+       
+    @NgModule({
+        declarations: [
+            AppComponent,
+            MonPremierComponent,
+            AppareilComponent
+        ],
+        imports: [
+            BrowserModule,
+            <span class="bold">FormsModule</span>
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+    </pre>
+    <hr>
+    <pre class="code">
+    // composant html
+    &lt;li class=&quot;list-group-item&quot;&gt;
+        &lt;h4&gt;Appareil : {{ appareilName }} -- Statut : &#123;&#123;getStatus()&#125;&#125;&lt;/h4&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; [(ngModel)]=&quot;appareilName&quot;&gt;
+    &lt;/li&gt;
+    </pre>
+      <h3 class="bold">Propriété personnalisé</h3>
+      <p>Un nom différent qu'on puisse régler depuis l'extérieur du code.<br>
+        Utiliser le décorateur @Input()
+      </p>
+      <pre>
+    import { Component, Input, OnInit } from '@angular/core';
+
+    @Component({
+        selector: 'app-appareil',
+        templateUrl: './appareil.component.html',
+        styleUrls: ['./appareil.component.scss']
+    })
+
+    export class AppareilComponent implements OnInit {
+        <span class="bold">@Input() appareilName: string;</span>
+        appareilStatus: string = 'éteint';
+
+        constructor() { }
+
+        ngOnInit() {}
+
+        getStatus() {
+            return this.appareilStatus;
+        }
+
+    }
+    </pre>
+<hr>
+<pre>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+      &lt;h2&gt;Mes appareils&lt;/h2&gt;
+      &lt;ul class=&quot;list-group&quot;&gt;
+        &lt;app-appareil appareilName=&quot;Machine &agrave; laver&quot;&gt;&lt;/app-appareil&gt;
+        &lt;app-appareil appareilName=&quot;Frigo&quot;&gt;&lt;/app-appareil&gt;
+        &lt;app-appareil appareilName=&quot;Ordinateur&quot;&gt;&lt;/app-appareil&gt;
+      &lt;/ul&gt;
+      <span class="bold">&lt;button class=&quot;btn btn-success&quot; [disabled]=&quot;!isAuth&quot;(click)=&quot;onAllumer()&quot;&gt;Tout allumer&lt;/button&gt;</span>
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h3>Les directives</h3>
+<ul>
+    <li><span class="bold">*ngIf="condition" </span>cette directive conditionnelle ne s'affichera que si la condition est "truthy" (elle retourne la valeur true où la variable mentionnée est définie et non-nulle), comme un statement if classique.
+    <pre>
+    &lt;div style=&quot;width:20px;height:20px;background-color:red;&quot;<span class="bold">*ngIf=&quot;appareilStatus === &#039;&eacute;teint&#039;</span> &quot;&gt;&lt;/div&gt;
+    </pre>
+</li>
+    <li><span class="bold">*ngFor="let obj of myArray"</span> cette directive permet permet d’itérer sur un array et recupérer ses objets.
+    <pre>
+    export class AppComponent {
+        isAuth = false;
+            
+        appareils = [
+            {
+            name: 'Machine à laver',
+            status: 'éteint'
+            },
+            {
+            name: 'Frigo',
+            status: 'allumé'
+            },
+            {
+            name: 'Ordinateur',
+            status: 'éteint'
+            }
+        ];
+        
+        constructor() { }
+    </pre>
+    <hr>
+    <pre>
+    &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-xs-12&quot;&gt;
+            &lt;h2&gt;Mes appareils&lt;/h2&gt;
+                &lt;ul class=&quot;list-group&quot;&gt;
+                        &lt;app-appareil  *ngFor=&quot;let appareil of appareils&quot;
+                        [appareilName]=&quot;appareil.name&quot;
+                        [appareilStatus]=&quot;appareil.status&quot;&gt;&lt;/app-appareil&gt;
+                &lt;/ul&gt;
+                &lt;button class=&quot;btn btn-success&quot;
+            [disabled]=&quot;!isAuth&quot;
+            (click)=&quot;onAllumer()&quot;&gt;Tout allumer&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    </pre>
+    </li>
+    <li><span class="bold">ngStyle</span>
+        Directives par attribut modifient le comportement d'un objet déjà existant. <br>
+        Permet d'appliquer des styles à un objet du DOM de manière dynamique. <br>
+        Prend un objet clé-valeur.
+        
+    </li>
+</ul>
+    </aside>
+
+  </section>
+</article>
