@@ -1,7 +1,7 @@
 ---
 layout: cours
-type: frontEnd
-number: 10
+type: generaux
+number: 3
 pathImg: /images/cards/prAgile.png
 title: Gestion de projet.
 comment: La méthode Agile comme méthode de travail.

@@ -1,7 +1,7 @@
 ---
 layout: cours
-type: frontEnd
-number: 6
+type: generaux
+number: 2
 theme: front
 pathImg: /images/cards/seo.jpg
 title: SEO

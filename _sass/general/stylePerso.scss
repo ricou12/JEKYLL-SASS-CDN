@@ -27,6 +27,15 @@
     h2 {
       font-size: 2.5em;
     }
+    li{
+      line-height: 1.9em;
+    }
+    p{
+      line-height: 1.5em;
+    }
+    pre{
+      color: rgb(37, 41, 88);
+    }
   }
 
   &4 {
@@ -45,6 +54,9 @@ h1 {
   @include opacityAndMove;
 }
 
+.code{
+  color: rgb(37, 41, 88);
+}
 
 .front-end {
   overflow: hidden;

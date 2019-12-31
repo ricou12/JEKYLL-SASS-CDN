@@ -1,7 +1,7 @@
 ---
 layout: cours
 type: frontEnd
-number: 8
+number: 5
 theme: front
 pathImg: /images/cards/js-web.png
 title: JS pour le web
