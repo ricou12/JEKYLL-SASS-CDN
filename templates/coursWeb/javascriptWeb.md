@@ -57,29 +57,43 @@ _Résultat_
 Accéder directement à la liste des classes
 
 **Ajoute une classe à l'élément**
-`elt.classList.add("nouvelleClasse");`
+```
+elt.classList.add("nouvelleClasse");
+```
 
 **Supprime une classe**
-`elt.classList.remove("nouvelleClasse");`
+```
+elt.classList.remove("nouvelleClasse");
+```
 
 **Rechercher une class renvoi un booléen**
-`elt.classList.contains("nouvelleClasse")`
+```
+elt.classList.contains("nouvelleClasse")
+```
 
 **Rechercher et remplacer**
-`elt.classList.replace("oldClass", "newClass");`
+```
+elt.classList.replace("oldClass", "newClass");
+```
 
 ### Propriété styles
-`elt.style.color = "#fff";  // Change la couleur du texte de l'élément à blanche`
-`elt.style.backgroundColor = "#000"; // Change la couleur de fond de l'élément en noir`
-`elt.style.fontWeight = "bold"; // Met le texte de l'élément en gras`
+```
+elt.style.color = "#fff";  // Change la couleur du texte de l'élément à blanche
+elt.style.backgroundColor = "#000"; // Change la couleur de fond de l'élément en noir
+elt.style.fontWeight = "bold"; // Met le texte de l'élément en gras
+```
 
 ### Modifiez les attributs
 Définir ou remplacer les attributs d'un élément
-`element.setAttribute(<name>, <value> ) ;`
+```
+element.setAttribute(<name>, <value> ) ;
+```
 
 ### Créez un nouvel élément
 L’élément ne fait pas encore partie du document
-`const newElt = document.createElement("div");`
+```
+const newElt = document.createElement("div");
+```
 
 ### Ajouter le nouvel élément
 ```

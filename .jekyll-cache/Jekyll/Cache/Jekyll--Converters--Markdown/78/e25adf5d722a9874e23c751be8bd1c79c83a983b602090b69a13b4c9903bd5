@@ -1,0 +1,216 @@
+I"*<h1 id="éléments-du-dom"><center>Éléments du DOM</center></h1>
+
+<h2 id="modifiez-le-contenu-dun-élément">Modifiez le contenu d’un élément</h2>
+<p>Les deux principales sont : <code class="highlighter-rouge">innerHTML</code> et textContent.</p>
+
+<h2 id="document--récupérer-des-éléments">Document : récupérer des éléments</h2>
+
+<h3 id="trouver-cet-élément">Trouver cet élément</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p id="my-anchor"&gt;My content&lt;/p&gt;
+const myAnchor = document.getElementById('my-anchor');
+</code></pre></div></div>
+<h3 id="retourne-la-liste-des-éléments">Retourne la liste des éléments</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const contents = document.getElementsByClassName('content');
+const firstContent = contents[0];
+</code></pre></div></div>
+<h3 id="retourne-tous-les-éléments-nom-de-balise">Retourne tous les éléments nom de balise</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const articles = document.getElementsByTagName('article');
+const thirdArticle = articles[2];
+</code></pre></div></div>
+<h3 id="retourne-le-premier-élément-qui-correspond-à-la-recherche">Retourne le premier élément qui correspond à la recherche</h3>
+<p><code class="highlighter-rouge">document.querySelector("#myId p.article &gt; a");</code></p>
+
+<h3 id="retourne-la-liste-des-éléments-1">Retourne la liste des éléments</h3>
+<p><code class="highlighter-rouge">document.querySelectorAll();</code></p>
+
+<h2 id="élément">Élément</h2>
+
+<h3 id="retourne-la-liste-des-enfants-">Retourne la liste des enfants :</h3>
+
+<p><strong><em>element.children</em></strong></p>
+
+<p><strong><em>Retourne l’élément parent</em></strong></p>
+
+<p><strong><em>element.parentElement</em></strong>
+<em>Permettent de naviguer vers l’élément suivant / précédent de même niveau que notre élément :</em>
+<code class="highlighter-rouge">element.nextElementSibling / element.previousElementSibling</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let elt = document.getElementById('main');
+elt.innerHTML = "&lt;ul&gt;&lt;li&gt;Elément 1&lt;/li&gt;&lt;li&gt;Elément 2&lt;/li&gt;&lt;/ul&gt;";
+_Résultat_
+&lt;div id="main"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Elément 1&lt;/li&gt;
+    &lt;li&gt;Elément 2&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+<h3 id="propriété-classlist-">Propriété classList :</h3>
+<p>Accéder directement à la liste des classes</p>
+
+<p><strong>Ajoute une classe à l’élément</strong></p>
+<pre><code class="language-elt.classList.add(&quot;nouvelleClasse&quot;);```">
+**Supprime une classe**
+`elt.classList.remove("nouvelleClasse");`
+
+**Rechercher une class renvoi un booléen**
+`elt.classList.contains("nouvelleClasse")`
+
+**Rechercher et remplacer**
+`elt.classList.replace("oldClass", "newClass");`
+
+### Propriété styles
+`elt.style.color = "#fff";  // Change la couleur du texte de l'élément à blanche`
+`elt.style.backgroundColor = "#000"; // Change la couleur de fond de l'élément en noir`
+`elt.style.fontWeight = "bold"; // Met le texte de l'élément en gras`
+
+### Modifiez les attributs
+Définir ou remplacer les attributs d'un élément
+`element.setAttribute(&lt;name&gt;, &lt;value&gt; ) ;`
+
+### Créez un nouvel élément
+L’élément ne fait pas encore partie du document
+`const newElt = document.createElement("div");`
+
+### Ajouter le nouvel élément
+</code></pre>
+<p>const newElt = document.createElement(“div”);
+let elt = document.getElementById(“main”);
+{ elt.appendChild(newElt);
+ou
+document.getElementById(“main”).appendChild(document.createElement(“div”));</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Supprimez et remplacez des éléments
+</code></pre></div></div>
+<p>const newElt = document.createElement(“div”);
+let elt = document.getElementById(“main”);
+// ajoute l’élément
+elt.appendChild(newElt);<br />
+// Supprime l’élément newElt de l’élément elt
+elt.removeChild(newElt); 
+// Remplace l’élément newElt par un nouvel élément de type article
+elt.replaceChild(document.createElement(“article”), newElt);</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Les événements
+</code></pre></div></div>
+<p>// Ecoute cet evenement
+element.addEventListener(‘click’, onClick);
+// On récupère l’élément sur lequel on veut détecter le clic
+const elt = document.getElementById(‘mon-lien’); 
+// On écoute l’événement click, notre callback prend un paramètre que nous avons appelé event ici.
+elt.addEventListener(‘click’, function() { 
+ // On change le contenu de notre élément pour afficher “C’est cliqué !” 
+elt.innerHTML = “C’est cliqué !”; 
+});</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Empêchera le formulaire de s'envoyer au serveur lors d’un événement onsubmit,  donc ne rafraichi la page.**
+</code></pre></div></div>
+<p>// On récupère l’élément sur lequel on veut détecter le clic.
+const elt = document.getElementById(‘mon-lien’); 
+elt.addEventListener(‘click’, function(event) { 
+// On écoute l’événement click, notre callback prend un paramètre que nous avons appelé event ici.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Empêcher la propagation de l'événement vers son parent.**
+</code></pre></div></div>
+<p>elementInterieur.addEventListener(‘click’, function(event) {
+event.stopPropagation();
+elementAvecMessage.innerHTML = “Message de l’élément intérieur”;
+});</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Mouvement de la souris**
+*`Mousemove`* fournit un objet de type **`MouseEvent`**
+Dès que la souris bouge notre fonction *callback* sera appelée avec un paramètre de type *MouseEvent*.
+* `clientX` / `clientY` : position de la souris dans les coordonnées locales (contenu du DOM) ;
+
+* `offsetX` / `offsetY` : position de la souris par rapport à l'élément sur lequel on écoute l'événement ;
+
+* `pageX` / `pageY` : position de la souris par rapport au document entier ;
+
+* `screenX` / `screenY` : position de la souris par rapport à la fenêtre du navigateur ;
+
+* `movementX` / `movementY` : position de la souris par rapport à la position de la souris lors du dernier événement `mousemove`.
+</code></pre></div></div>
+<p>document.getElementById(‘result’).addEventListener(‘mousemove’,function(e){
+document.getElementById(‘mouse-x’).innerHTML = e.offsetX;
+document.getElementById(‘mouse-y’).innerHTML = e.offsetY;
+});</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Contenu d'un champ texte, événement change**
+Fonctionne avec les éléments de type &lt;`input&gt;`, &lt;`select&gt;` et &lt;`textarea&gt;`,  `checkbox,`  `radio`.
+Avoir la valeur dès que l'utilisateur ajoute ou supprime une lettre
+</code></pre></div></div>
+<p>input.addEventListener(‘input’, function(event) {
+output.innerHTML = event.target.value;
+});</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Input text**
+</code></pre></div></div>
+<p>document.getElementById(‘name’).addEventListener(‘input’,function(e){
+document.getElementById(‘res-name’).innerHTML = e.target.value ;
+ou
+document.getElementById(‘res-name’).textContent =  e.target.value ;
+});</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Bouton d’option**
+</code></pre></div></div>
+<p>document.getElementById(‘gender’).addEventListener(‘change’,function(e){
+document.getElementById(‘res-gender’).innerHTML = e.target.value;
+});</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Les services web
+Programme s'exécutant sur un serveur répondant à des **requêtes utilisant le protocole http (*HyperText Transfer Protocol*).
+
+* L’envoi de mail (_SMTP_)
+* La réception de mail (_IMAP_)
+* Ressources web (_HTTP)_
+* Transferts de fichiers (_FTP_)
+
+### Les codes HTTP.
+
+* **100 à 199** sont des codes d'**information**
+
+* **200 à 299** sont des codes de **succès**.
+
+* **300 à 399** sont les codes de **redirection**
+
+* **400 à 499** sont des codes d'**erreur** liés à l'**utilisation du service web**
+
+* **500 à 599** sont des codes d'**erreur** venant du **service web**
+
+### Les méthodes http
+* **GET** : permet de **récupérer** des ressources, comme par exemple le temps actuel sur un service de météo ;
+* **POST** : permet de **créer** ou **modifier** une ressource, comme la création d'un nouvel utilisateur sur votre application ;
+* **PUT** : permet de **modifier** une ressource, comme le nom de l'utilisateur que vous venez de créer avec _POST_ ;
+* **DELETE** : Permet de **supprimer** une ressource, comme un commentaire dans un fil de discussion.
+
+_**API**_  _Signifie _Application Programming Interface__
+*Interface* mettant à disposition des *points d'accès* vers les ressources de l'application.
+
+_**AJAX**_  signifie en fait _Asynchronous JavaScript And XML_.
+*Ensemble d'objets et de fonctions* pour des requêtes HTTP de manière asynchrone, sans avoir besoin de recharger la page du navigateur.
+
+**Méthode GET** Envoyer une requête (AJAX)
+Les données sont renvoyées dans un *format Json*.`
+</code></pre></div></div>
+<p>var request = new XMLHttpRequest();
+request.open(“GET”, “http://url-service-web.com/api/users”);
+request.send();</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Préférer l'API fetch()](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch)  fournit une interface JavaScript plus simple pour récupérer des ressources à travers le réseau de manière asynchrone (dispo dans les nouveaux navigateur)
+</code></pre></div></div>
+<p>var myImage = document.querySelector(‘img’);
+fetch(‘flowers.jpg’)
+.then(function(response) {
+return response.blob();
+})
+.then(function(myBlob) {
+var objectURL = URL.createObjectURL(myBlob);
+myImage.src = objectURL;
+});</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Données au format JSON _JavaScript Object Notation_
+
+**Validez les données saisies par vos utilisateurs**
+Never trust user input ! *Ne faites jamais confiance aux données saisies par vos utilisateurs !*
+</code></pre></div></div>
+<p>myInput.addEventListener(‘input’, function(e) {
+var value = e.target.value;
+if (value.startsWith(‘Hello ‘)) {
+isValid = true;
+} else {
+isValid = false;
+}
+});
+```
+<strong>Avec des regex</strong></p>
+
+<p>format spécial qui permet de <em>matcher</em> du texte</p>
+:ET

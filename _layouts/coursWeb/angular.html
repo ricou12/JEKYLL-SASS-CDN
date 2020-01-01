@@ -13,39 +13,34 @@ layout: default
       <ul>
         <li>Vérifier si nodeJs est installé sur le pc via un terminal : <span class="bold">node –v</span>
           <br> Si besoin l’installer <span class="bold"> https://nodejs.org/en/download/</span></li>
-        <li>Installer NPM (Node Package Manager) : <span class="bold">npm install -g npm@latest</span>
-          <br> Dernière version du gestionnaire de paquets.
+        <li>Installer NPM (Node Package Manager) : 
+        <pre>npm install -g npm@latest</pre>
+        Dernière version du gestionnaire de paquets.
         </li>
-        <li>Installer le cli d’Angular : <span class="bold"> npm install -g @angular/cli</span></li>
-        <li>Créer son premier projet : <span class="bold">ng new mon-projet</span>
-          <br> Pour utiliser un prépocesseur css : <span class="bold">Ng new mon-projet --style=scss</span>
-          <br> Sans fichiers de test unitaires : <span class="bold">Ng new mon-projet --style=scss
-            --skip-tests=true</span>
-
+        <li>Installer le cli d’Angular : <pre> npm install -g @angular/cli</pre></li>
+        <li>Créer son premier projet : <pre>ng new mon-projet</pre>
+          Pour utiliser un prépocesseur css : <pre>Ng new mon-projet --style=scss</pre>
+          Sans fichiers de test unitaires : <pre>Ng new mon-projet --style=scss --skip-tests=true</pre>
         </li>
-        <li>Installer bootstrap : <span class="bold">npm install bootstrap@3.3.7 --save</span>
-          <br> ---save pour l’ajouter au package.json du projet.
-          <br> Ouvrez le fichier <span class="bold">angular.json </span> du dossier source de votre projet.
-          <br> Dans <span class="bold">"architect/build/options"</span>, modifiez l’array <span
-            class="bold">styles</span> comme suit :
-          <p class="bold code">
-            "styles": [ <br>
-            "./node_modules/bootstrap/dist/css/bootstrap.css", <br>
-            "src/styles.scss" <br>
-            ]
-          </p>
+        <li>Installer bootstrap : <pre>npm install bootstrap@3.3.7 --save</pre>
+          ---save pour l’ajouter au package.json du projet.
+          Ouvrez le fichier <span class="bold">angular.json </span> du dossier source de votre projet.
+          Dans <span class="bold">"architect/build/options"</span>, modifiez l’array <span class="bold">styles</span> comme suit :
+          <pre>"styles": [
+      "./node_modules/bootstrap/dist/css/bootstrap.css",
+      "src/styles.scss"
+          ]</pre>
+         
         </li>
         <li>npm txjs-compact --save</li>
-        <li>Lancer le server de développement : <span class="bold">ng serve --open</span> ou <span class="bold">ng
-            serve</span></li>
-
+        <li>Lancer le server de développement : <pre>ng serve --open</pre> ou <pre>ng serve</pre></li>
       </ul>
     </aside>
     <aside class="col-12">
       <h2>Créer un nouveau composant</h2>
       <ul>
-        <li class="bold">ng generate component new-component</li>
-        <li class="bold">ng g c new-component</li>
+        <li><pre>ng generate component new-component</pre></li>
+        <li><pre>ng g c new-component</pre></li>
       </ul>
     </aside>
     <aside class="col-12">
@@ -62,15 +57,15 @@ layout: default
         <br> Récupéré et affiche le contenu de variables dans le Template html.
       </p>
       <h3 class="bold">string interpolation : &#123;&#123; &#160;&#160; &#125;&#125; </h3>
-      <pre class="code">
+      <pre>
     <span class="bold">// composant html </span>
     &lt;li class=&quot;list-group-item&quot;&gt;
     &nbsp; &lt;h4&gt;Appareil :<span class="bold"> &#123;&#123; appareilName &#125;&#125; </span>-- Statut :<span
         class="bold"> &#123;&#123; getStatus() &#125;&#125;</span> &lt;/h4&gt;
-    &lt;/li&gt;
-      </pre>
+    &lt;/li&gt;</pre>
+      
       <hr>
-      <pre class="code">
+      <pre>
     <span class="bold">// composant .ts</span>
     import { Component, OnInit } from '@angular/core';
 
@@ -96,7 +91,8 @@ layout: default
             return this.appareilStatus;
         }
     }
-      </pre>
+  </pre>
+      
       <h3 class="bold">property binding : [ ]</h3 class="bold">
       <p>Modifier dynamiquement les propriétés d'un élément du DOM en fonction de données dans votre TypeScript.
         <br>Lie la propriété d’un élément html au TypeScript, mettre la propriété entre [ ] et l'associer à la variable.
@@ -106,19 +102,15 @@ layout: default
       <p>Réagir dans votre code TypeScript aux événements venant du Template HTML.
         <br>Utiliser les () pour créer une liaison à un événement.
       </p>
+      <pre>// composant html<br>&lt;button class=&quot;btn btn-success&quot;[disabled]=&quot;!isAuth&quot;(click)=&quot;onAllumer()&quot;&gt;Tout allumer&lt;/button&gt;&lt;/div&gt;</pre>
       <pre>
-    // composant html
-    &lt;button class=&quot;btn btn-success&quot;[disabled]=&quot;!isAuth&quot;(click)=&quot;onAllumer()&quot;&gt;Tout allumer&lt;/button&gt;&lt;/div&gt;
-    </pre>
-      <hr>
-      <pre>
-    // composant ts
-        … 
-    // Méthode
-    onAllumer() {
-        console.log('On allume tout !');
+  // composant ts
+  … 
+  // Méthode
+      onAllumer() {
+      console.log('On allume tout !');
     }
-        </pre>
+      </pre>
       <h3 class="bold">two-way binding : [ ( ) ]</h3>
       <p>Utilise la liaison par propriété et la liaison par événement en même temps. <br>
         Pour les formulaires, afin de pouvoir déclarer et de récupérer le contenu des champs, entre autres. <br>
@@ -127,7 +119,7 @@ layout: default
         fichier).
       </p>
       <hr>
-    <pre class="code">
+    <pre>
     <span class="bold">// app.module.ts</span>
     import { BrowserModule } from '@angular/platform-browser';
     import { NgModule } from '@angular/core';
@@ -153,7 +145,7 @@ layout: default
     export class AppModule { }
     </pre>
     <hr>
-    <pre class="code">
+    <pre>
     // composant html
     &lt;li class=&quot;list-group-item&quot;&gt;
         &lt;h4&gt;Appareil : {{ appareilName }} -- Statut : &#123;&#123;getStatus()&#125;&#125;&lt;/h4&gt;
