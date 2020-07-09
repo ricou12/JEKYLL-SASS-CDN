@@ -1,5 +1,5 @@
 # Générateur de site statique : JEKYLL 
-## Préprocesseur css : SASS, le CDN de Bootstrap, Javascript
 
+  ## HTML, CSS, SASS, Bootstrap, Javascript
 
-[live!](https://ricou12.github.io/JEKYLL-SASS-CDN/)
+## [Cours web et portfolio](https://ricou12.github.io/JEKYLL-SASS-CDN/)
